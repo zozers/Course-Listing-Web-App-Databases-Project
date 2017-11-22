@@ -24,9 +24,9 @@ drop table Requires CASCADE;
 -- offering(id, semester, pf, max_students)
 -- classroom(code, capacity)
 -- weekday(name)
--- building(name) 
+-- building(name)
 
--- teaches(professor.id, offering.id, offering.semester) 
+-- teaches(professor.id, offering.id, offering.semester)
 -- taughtIn(offering.id, offering.semester, classroom.code)
 -- locatedIn(classroom.code, building.name)
 -- implements(offering.id, offering.semester, course.id,)
@@ -36,105 +36,98 @@ drop table Requires CASCADE;
 
 
 
-create table Professor(
-   NAME VARCHAR (20)     NOT NULL,
-   ID int   NOT NULL,
-   EMAIL VARCHAR(50)    NOT NULL,
-   PRIMARY KEY (ID)
+create table professor(
+   name VARCHAR (20)     NOT NULL,
+   id int   NOT NULL,
+   email VARCHAR(50)    NOT NULL,
+   PRIMARY KEY (id)
 );
 
 
-create table Departments(
-   NAME VARCHAR (20)     NOT NULL,
-   PRIMARY KEY (NAME)
+create table department(
+   name VARCHAR (20)     NOT NULL,
+   PRIMARY KEY (name)
 );
 
-create table Building(
-   NAME VARCHAR (20)     NOT NULL,
-   PRIMARY KEY (NAME)
+create table building(
+   name VARCHAR (20)     NOT NULL,
+   PRIMARY KEY (name)
 );
 
-create table Weekday(
-   NAME VARCHAR (20)     NOT NULL,
-   PRIMARY KEY (NAME)
+create table weekday(
+   name VARCHAR (20)    NOT NULL,
+   PRIMARY KEY (name)
 );
 
-create table Classrooms(
-   CODE VARCHAR (20)     NOT NULL,
-   CAPACITY int     NOT NULL,
-   PRIMARY KEY (CODE)
+create table classroom(
+   code VARCHAR (20)     NOT NULL,
+   capacity int     NOT NULL,
+   PRIMARY KEY (code)
 );
 
-create table Course(
-   NAME VARCHAR (20)     NOT NULL,
-   CREDIT VARCHAR (20)     NOT NULL,
-   DESCRIPTION   VARCHAR(800)   NOT NULL,
-   FIRST_YEAR VARCHAR(20) 	NOT NULL,
-   NEW VARCHAR(10)   NOT NULL,
-   ID VARCHAR(10)    NOT NULL,
+create table course(
+   name VARCHAR (20)     NOT NULL,
+   credits VARCHAR (20)     NOT NULL,
+   description   VARCHAR(800)   NOT NULL,
+   first_year VARCHAR(20) 	NOT NULL,
+   when_new VARCHAR(10)   NOT NULL,
+   id VARCHAR(10)    NOT NULL,
 
-   PRIMARY KEY (ID)
+   PRIMARY KEY (id)
 );
 
-create table Offering(
-   ID VARCHAR (20)      NOT NULL ,
-   SEMESTER VARCHAR (10)     NOT NULL,
-   PF VARCHAR(10) 	NOT NULL,
-   MAX_STUDENTS INT  NOT NULL,
-   PRIMARY KEY (ID, SEMESTER)
+create table offering(
+   id VARCHAR (20)      NOT NULL ,
+   semester VARCHAR (10)     NOT NULL,
+   pf VARCHAR(10) 	NOT NULL, /* NEED SOME SORT OF BOOLEAN TYPE */
+   max_students INT  NOT NULL,
+   PRIMARY KEY (id, semester)
 );
 
-create table Teaches(
-   OfID VARCHAR,
-   OFSEMESTER VARCHAR,
-   TID INT REFERENCES Professor(ID),
-   FOREIGN KEY (OfID, OFSEMESTER) REFERENCES Offering (ID, SEMESTER)
+create table teaches(
+   p_id INT REFERENCES professor(id),
+   o_id VARCHAR,
+   semester VARCHAR,
+
+   FOREIGN KEY (o_id, semester) REFERENCES offering (id, semester)
 );
 
-
-create table Offers(
-   CfID VARCHAR,
-   DNAME VARCHAR REFERENCES Departments(NAME),
-   FOREIGN KEY (CfID) REFERENCES Course (ID)
+create table offers(
+   c_id VARCHAR,
+   d_name VARCHAR REFERENCES department(name),
+   FOREIGN KEY (c_id) REFERENCES course (id)
 );
 
-create table IMPLEMENTS(
-   OFID VARCHAR,
-   OFSEMESTER VARCHAR,
-   CFID VARCHAR REFERENCES Course(ID),
-   FOREIGN KEY (OFID, OFSEMESTER) REFERENCES Offering(ID, SEMESTER)
+create table implements(
+   o_id VARCHAR,
+   semester VARCHAR,
+   c_id VARCHAR REFERENCES course(id),
+   FOREIGN KEY (o_id, semester) REFERENCES offering(id, semester)
 
 );
 
-
-create table Taught_In(
-   OFID VARCHAR,
-   OFSEMESTER VARCHAR,
-   FOREIGN KEY (OFID, OFSEMESTER) REFERENCES Offering (ID, SEMESTER),
-   RCODE VARCHAR REFERENCES Classrooms(CODE)
+create table taughtIn(
+   o_id VARCHAR,
+   semester VARCHAR,
+   FOREIGN KEY (o_id, semester) REFERENCES offering (id, semester),
+   room_code VARCHAR REFERENCES classroom(code)
 );
 
-create table Located_In(
-   Bname VARCHAR REFERENCES Building(NAME),
-   RCODE VARCHAR REFERENCES Classrooms(CODE)
+create table locatedIn(
+   building VARCHAR REFERENCES building(name),
+   room_code VARCHAR REFERENCES classroom(code)
 );
 
-create table Offered_ON(
-   OFID VARCHAR,
-   OFSEMESTER VARCHAR,
-   DAY VARCHAR REFERENCES Weekday(NAME),
-   Time_start TIME,
-   Time_end TIME,
-   FOREIGN KEY (OFID, OFSEMESTER) REFERENCES Offering (ID, SEMESTER)
+create table offeredOn(
+   o_id VARCHAR,
+   semester VARCHAR,
+   day VARCHAR REFERENCES weekday(name),
+   time_start TIME,
+   time_end TIME,
+   FOREIGN KEY (o_id, semester) REFERENCES offering (id, semester)
 );
 
 create table Requires(
-   CID VARCHAR REFERENCES Course (ID),
-   RID VARCHAR REFERENCES Course(ID)
+   c_id VARCHAR REFERENCES course (id),
+   req_id VARCHAR REFERENCES course(id)
 );
-
-
-
-
-
-
