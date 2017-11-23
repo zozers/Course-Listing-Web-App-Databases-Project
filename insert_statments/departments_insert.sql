@@ -1,0 +1,16 @@
+﻿INSERT INTO Department(Name) VALUES ('Math');
+INSERT INTO Department(Name) VALUES ('Chemistry');
+INSERT INTO Department(Name) VALUES ('Physics');
+INSERT INTO Department(Name) VALUES ('Biology');
+INSERT INTO Department(Name) VALUES ('Computer Science');
+INSERT INTO Department(Name) VALUES ('Spanish');
+INSERT INTO Department(Name) VALUES ('Mandarin');
+INSERT INTO Department(Name) VALUES ('French');
+INSERT INTO Department(Name) VALUES ('German');
+INSERT INTO Department(Name) VALUES ('Philosophy');
+INSERT INTO Department(Name) VALUES ('Anthropology');
+INSERT INTO Department(Name) VALUES ('Dance');
+INSERT INTO Department(Name) VALUES ('Ceramics');
+INSERT INTO Department(Name) VALUES ('Drawing');
+INSERT INTO Department(Name) VALUES ('Theater');
+INSERT INTO Department(Name) VALUES ('Writing');
