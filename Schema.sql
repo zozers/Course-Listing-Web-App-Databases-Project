@@ -1,20 +1,20 @@
 CREATE SCHEMA course_guide_data;
 
-drop table professor CASCADE;
-drop table department CASCADE;
-drop table classroom CASCADE;
-drop table offering CASCADE;
-drop table course CASCADE;
-drop table weekday CASCADE;
-drop table building CASCADE;
-drop table teaches CASCADE;
-drop table implements CASCADE;
-drop table offers CASCADE;
-drop table taughtIn CASCADE;
-drop table locatedIn CASCADE;
-drop table offeredOn CASCADE;
-drop table requires CASCADE;
-drop table all_data CASCADE;
+drop table if exists professor CASCADE;
+drop table if exists department CASCADE;
+drop table if exists classroom CASCADE;
+drop table if exists offering CASCADE;
+drop table if exists course CASCADE;
+drop table if exists weekday CASCADE;
+drop table if exists building CASCADE;
+drop table if exists teaches CASCADE;
+drop table if exists implements CASCADE;
+drop table if exists offers CASCADE;
+drop table if exists taughtIn CASCADE;
+drop table if exists locatedIn CASCADE;
+drop table if exists offeredOn CASCADE;
+drop table if exists requires CASCADE;
+drop table if exists all_data CASCADE;
 
 
 create table all_data(
