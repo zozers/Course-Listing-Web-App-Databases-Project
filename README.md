@@ -1,7 +1,7 @@
 
 Databases Project Type 1.
 
-Run Schema.sql to build the schema and then run complete_data_insert.sql to insert all of the data.
+To implement database create Postgresql db then run Schema.sql to build the schema. To insert all of the data, run complete_data_insert.sql.
 
 
 By Zoe Offermann and Robby Costales
