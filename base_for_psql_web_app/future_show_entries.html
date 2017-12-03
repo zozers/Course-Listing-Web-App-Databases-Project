@@ -1,0 +1,26 @@
+<!--  
+{% endif %}
+-->  
+
+ <ul class=entries>
+  <table style="width:100%">
+  <tr>
+    <th>name</th>
+    <th>credits</th> 
+    <th>description</th>
+    <th>first_year</th>
+    <th>new</th>
+    <th>id</th>
+  </tr>
+
+   {% for entry in entries %}
+    <tr>
+      <td>{{ entry.name }}
+      <td>{{ entry.credits }}
+      <td>{{ entry.description }}
+      <td>{{ entry.first_year }}
+      <td>{{ entry.new }}
+      <td>{{ entry.id }}
+    </tr>
+   
+</table>
