@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <head>
+        <title>Simon's Rock Course Guide</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap-theme.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel=stylesheet type=text/css href="{{ url_for('static', filename='new_style.css') }}">
+
+    </head>
+    <body>
+    <div class="page-header">
+        <h1>View Courses</a></h1>
+    </div>
+    <div class="content container">
+
+        {% block content %}
+        {% endblock %}
+            
+    </div>
+  </body>
+</html>

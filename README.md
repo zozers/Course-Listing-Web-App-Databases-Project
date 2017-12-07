@@ -5,11 +5,7 @@ To implement database create Postgresql db then run Schema.sql to build the sche
 
 To run the base flask app navigate to base_for_psql_web_app/flaskr  
 
-Then in the console run:  
-	
-	export FLASK_APP=flaskr.py
-
-	flask run 
+Then run the python file flaskr.py
 
 
 By Zoe Offermann and Robby Costales

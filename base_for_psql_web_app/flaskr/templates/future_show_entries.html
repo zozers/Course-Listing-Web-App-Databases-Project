@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends "new_layout.html" %} 
+
+ {% block content %}
+    {% if session.logged_in %}
+
+    {% endif %}
+
+     <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Credits</th> 
+          <th>Description</th>
+          <th>First Year</th>
+          <th>New</th>    
+        </tr>
+      </thead>
+      {% for entry in entries %}
+        <tbody>
+          <tr>
+            <td>{{ entry.id }}
+            <td>{{ entry.name }}
+            <td>{{ entry.credits }}
+            <td>{{ entry.description}}
+            <td>{{ entry.first_year }}
+            <td>{{ entry.new }}
+          </tr>
+        </tbody>
+        
+
+    {% else %}
+      <li><em>Unbelievable.  No entries here so far</em>
+    {% endfor %}
+    </table>
+  {% endblock %}

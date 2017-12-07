@@ -1,26 +1,39 @@
-<!--  
-{% endif %}
--->  
+{% block body %}
+  {% if session.logged_in %}
+
+  {% endif %}
 
  <ul class=entries>
   <table style="width:100%">
-  <tr>
-    <th>name</th>
-    <th>credits</th> 
-    <th>description</th>
-    <th>first_year</th>
-    <th>new</th>
-    <th>id</th>
-  </tr>
+    <thead>
 
-   {% for entry in entries %}
-    <tr>
-      <td>{{ entry.name }}
-      <td>{{ entry.credits }}
-      <td>{{ entry.description }}
-      <td>{{ entry.first_year }}
-      <td>{{ entry.new }}
-      <td>{{ entry.id }}
-    </tr>
-   
-</table>
+      <tr>
+        <th>name</th>
+        <th>credits</th> 
+        <th>description</th>
+        <th>first_year</th>
+        <th>new</th>
+        <th>id</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+     {% for entry in entries %}
+      
+      <tr>
+        <td>{{ entry.name }}
+        <td>{{ entry.credits }}
+        <td>{{ entry.description }}
+        <td>{{ entry.first_year }}
+        <td>{{ entry.new }}
+        <td>{{ entry.id }}
+      </tr>
+    </tbody>
+  </table>
+
+  {% else %}
+    <li><em>Unbelievable.  No entries here so far</em>
+  {% endfor %}
+  </ul>
+{% endblock %}

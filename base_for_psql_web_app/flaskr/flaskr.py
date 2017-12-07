@@ -28,7 +28,6 @@ def connect_db():
 	return rv
 
 
-
 def init_db():
 	db = get_db()
 	with app.open_resource('Schema_2.sql', mode='r') as f:
@@ -71,7 +70,7 @@ def show_entries():
 	cur = db.execute('select * from course')
 	entries = db.fetchall()
 	# print("entries is ", entries)
-	return render_template('show_entries.html', entries=entries)
+	return render_template('future_show_entries.html', entries=entries)
 
 
 
