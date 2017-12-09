@@ -12,7 +12,7 @@ app.config.update(dict(
 	DATABASE=os.path.join(app.root_path, 'flaskr.db'),
 	SECRET_KEY='development key',
 	USERNAME='test',
-	PASSWORD='test'
+	PASSWORD='penis'
 ))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
@@ -67,9 +67,8 @@ def close_db(error):
 def show_entries():
 	db = get_db()
 	db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-	cur = db.execute('select * from course')
+	cur = db.execute('select * from course order by course.name')
 	entries = db.fetchall()
-	# print("entries is ", entries)
 	return render_template('future_show_entries.html', entries=entries)
 
 
@@ -111,6 +110,19 @@ def delete_entry():
 	db.commit()
 	flash('Entry was successfully deleted')
 	return redirect(url_for('show_entries'))
+
+
+
+
+@app.route('/find')
+def find_entry():
+	db = get_db()
+	db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
+	cur = db.execute('select * from offering')
+	entries = db.fetchall()
+	# print("entries is ", entries)
+	return render_template('input_search.html', entry=entries[0])
+
 
 
 
