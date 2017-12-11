@@ -68,53 +68,73 @@ def show_courses():
 
 
 
-# @app.route('/')
-# def find_entry():
-#   db = get_db()
-#   db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-#   cur = db.execute('select * from course where course.name LIKE "%"" + "(%s)" + "%";',(request.form['search'],))
-#   courses = db.fetchall()
-#   # print("entries is ", entries) 
 
-
-#   return render_template('input_search.html', courses=courses[0])
-
-
-
-
-
-@app.route('/search', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def search():
     if request.method == "POST":
         db = get_db()
         db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-        print(request.form['search'])
-        cur = db.execute('''select * from course where course.name ILIKE %s''', ('%'+request.form['search']+'%',))
-        courses = db.fetchall()
+        credit_list = []
+        
+        for i in ['1','2','3','4','lab']:
+            try:
+                credit_list.append(request.form['credit_'+ i])
+            except:
+                pass
+        
+        dep_list = []
+        for i in ["PACE", "FS", "AFAM","BIO","ANTH",'LING','ARTH','DANC','PHIL','ARTS','WS','CMPT','COM','CHEM','ECON','ENVS','FILM','HIST','GEOG','LIT','LR','MATH','MUS','NATS','PHOT','PHYS','POLS','PSYC','SOCS','THEA','SART','CHIN','ESL','FREN','GERM','SPAN']:
+            try:
+                dep_list.append(request.form[i])
+            except:
+                pass
 
-        return render_template("future_show_entries.html", courses=courses)
+
+
+
+
+
+
+
+        query = ''' SELECT t.semester, o.id, c.name, p.name, c.credits, c.description, c.first_year, c.when_new FROM course c, teaches t, professor p, offering o, implements i
+                    WHERE o.semester = 'S18' AND o.id = i.o_id AND c.id = i.c_id AND o.id = t.o_id AND p.id = t.p_id AND (c.name ILIKE %s OR c.description ILIKE %s) '''
+        
+        for i in credit_list: 
+            if len(credit_list) > 0:
+                if credit_list.index(i) == 0:
+                    query += ' and ( c.credits ILIKE ' + "'" + i + "____'"
+                    query += ' or c.credits ILIKE ' + "'" + i + "'"
+                else:
+                    query += ' or c.credits ILIKE ' + "'" + i + "____'"
+                    query += ' or c.credits ILIKE ' + "'" + i + "'"
+        
+        if len(credit_list) > 0:
+            query += ')'
+
+
+        for i in dep_list: 
+            if len(dep_list) > 0:
+                if dep_list.index(i) == 0:
+                    query += ' and ( o.id ILIKE ' + "'" + i + "___'"
+                    query += ' or o.id ILIKE ' + "'" + i + "_____'"
+                else:
+                    query += ' or o.id ILIKE ' + "'" + i + "___'"
+                    query += ' or o.id ILIKE ' + "'" + i + "_____'"
+        
+        if len(credit_list) > 0:
+            query += ')'
+         
+        
+        cur = db.execute(query, ('%'+request.form['search']+'%', '%'+request.form['search']+'%'))
+        
+        data = db.fetchall()
+
+
+        return render_template("future_show_entries.html", data=data)
     
     return render_template('input_search.html')
 
 
-
-
-
-
-# @app.route('/update_db', methods=['POST'])
-# def update_entry():
-#   if not  session.get('logged_in'):
-#       abort(401)
-#   db = get_db()
-#   cur = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-#   # print(request.form['id'])
-    
-#   cur.execute('update entries set title = (%s), text = (%s) where id = (%s);',(
-#       request.form['title'], request.form['text'], request.form['id'],))
-
-#   db.commit()
-#   flash('Entry was successfully Updated')
-#   return redirect('show_sorted.html')
 
 
 

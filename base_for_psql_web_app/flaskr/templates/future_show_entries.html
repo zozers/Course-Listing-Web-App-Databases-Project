@@ -6,8 +6,8 @@
 
     {% endif %}
     <div class="page-header">
-        <h1>View Courses</a></h1>
-        <form method="get" action="/search"><button type="submit">Back To Search</button></form>
+        <h1>View Courses</h1>
+        <form method="get" action="/"><button type="submit">Back To Search</button></form>
 
     </div>
 
@@ -15,22 +15,26 @@
       <thead>
         <tr>
           <th>Id</th>
-          <th>Name</th>
+          <th>Semester</th>
+          <th>Professor Name</th>
+          <th>Course Name</th>
           <th>Credits</th> 
           <th>Description</th> 
           <th>First Year</th>
           <th>New</th>    
         </tr>
       </thead>
-      {% for course in courses %}
+      {% for entry in data %}
         <tbody>
           <tr>
-            <td>{{ course.id }}
-            <td>{{ course.name }}
-            <td>{{ course.credits }}
-            <td>{{ course.description}}
-            <td>{{ course.first_year }}
-            <td>{{ course.new }}
+            <td>{{ entry.id }}
+            <td>{{ entry.semester}}
+            <td>{{ entry.name }}            
+            <td>{{ entry[2]}}
+            <td>{{ entry.credits }}
+            <td>{{ entry.description}}
+            <td>{{ entry.first_year }}
+            <td>{{ entry.new }}
           </tr>
         </tbody>
         
