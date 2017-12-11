@@ -1,12 +1,15 @@
 {% extends "new_layout.html" %}
 {% block content %}
-  {% if session.logged_in %}
-    <form action="{{ url_for('find_entry') }}" method=post class=add-entry>
-      <dl>
-        <dt>Search course name:
-        <dd><input type=text size=30 name=title value="{{entry.title}}">
-      </dl>
-    </form>
+<div class="search">
+<form action="/search" method=post>
+    <input type=text name=search value="{{request.form.search}}"></br>
+    <div class="actions"><input type=submit value="Search"></div>
 
-  {% endif %} 
-  {% endblock %}
+</form>
+</div>
+{% for message in get_flashed_messages() %}
+<div class=flash>
+    {{ message }}
+</div>
+{% endfor %}
+{% endblock %}
