@@ -89,15 +89,8 @@ def search():
             except:
                 pass
 
-
-
-
-
-
-
-
         query = ''' SELECT t.semester, o.id, c.name, p.name, c.credits, c.description, c.first_year, c.when_new FROM course c, teaches t, professor p, offering o, implements i
-                    WHERE o.semester = 'S18' AND o.id = i.o_id AND c.id = i.c_id AND o.id = t.o_id AND p.id = t.p_id AND (c.name ILIKE %s OR c.description ILIKE %s) '''
+                    WHERE o.semester = 'S18' AND o.id = i.o_id AND c.id = i.c_id AND o.id = t.o_id AND p.id = t.p_id AND (c.name ILIKE %s OR c.description ILIKE %s) AND (p.name ILIKE %s) '''
         
         for i in credit_list: 
             if len(credit_list) > 0:
@@ -121,11 +114,12 @@ def search():
                     query += ' or o.id ILIKE ' + "'" + i + "___'"
                     query += ' or o.id ILIKE ' + "'" + i + "_____'"
         
-        if len(credit_list) > 0:
+        if len(dep_list) > 0:
             query += ')'
          
-        
-        cur = db.execute(query, ('%'+request.form['search']+'%', '%'+request.form['search']+'%'))
+        print(request.form['search_1'])
+
+        cur = db.execute(query, ('%'+request.form['search']+'%', '%'+request.form['search']+'%', '%'+request.form['search_1']+'%'))
         
         data = db.fetchall()
 
