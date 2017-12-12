@@ -24,7 +24,7 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 def connect_db():
 	"""Connects to the specific database."""
-	rv = psycopg2.connect(dbname="course_guide")
+	rv = psycopg2.connect(dbname="course_guide", user="robby", password="penis")
 	return rv
 
 
@@ -67,7 +67,7 @@ def close_db(error):
 def show_entries():
 	db = get_db()
 	db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-	cur = db.execute('select * from course')
+	cur = db.execute('select * from course order by course.name')
 	entries = db.fetchall()
 	# print("entries is ", entries)
 	return render_template('future_show_entries.html', entries=entries)
@@ -80,14 +80,14 @@ def add_entry():
 		abort(401)
 	db = get_db()
 	cur = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-	
+
 	if (request.form['title'] == ""):
 		flash('New entry cannot have an empty title!!')
 		return redirect(url_for('show_entries'))
 	if (request.form['text'] == ""):
 		flash('New entry cannot have an empty entry!!')
 		return redirect(url_for('show_entries'))
-	
+
 	cur.execute('insert into entries (title, text) values(%s,%s)',
 		(request.form['title'], request.form['text']))
 
@@ -104,7 +104,7 @@ def delete_entry():
 	db = get_db()
 	cur = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
 	# print(request.form['id'])
-	
+
 	cur.execute('delete from entries where id = (%s)',(
 		request.form['id'],))
 
@@ -133,7 +133,7 @@ def update_entry():
 	db = get_db()
 	cur = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
 	# print(request.form['id'])
-	
+
 	cur.execute('update entries set title = (%s), text = (%s) where id = (%s);',(
 		request.form['title'], request.form['text'], request.form['id'],))
 
@@ -166,11 +166,3 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
-
-
-	
