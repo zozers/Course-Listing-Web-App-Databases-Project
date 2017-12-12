@@ -20,11 +20,14 @@ drop table if exists all_data CASCADE;
 create table all_data(
 
 course_offering_id   VARCHAR,
+semester VARCHAR,
+pf VARCHAR,
 new   VARCHAR,
 course_name VARCHAR,
 credits  VARCHAR,
-time_and_place VARCHAR,
-semester VARCHAR,
+time_  VARCHAR,   
+days VARCHAR,
+classroom VARCHAR,
 professor_name VARCHAR,
 first_year_friendly  VARCHAR,
 max_students   VARCHAR,
@@ -73,15 +76,6 @@ create table department(
    PRIMARY KEY (name)
 );
 
-create table building(
-   name VARCHAR (20)     NOT NULL,
-   PRIMARY KEY (name)
-);
-
-create table weekday(
-   name VARCHAR (20)    NOT NULL,
-   PRIMARY KEY (name)
-);
 
 create table classroom(
    code VARCHAR (20)     NOT NULL,
@@ -93,7 +87,7 @@ create table course(
    name VARCHAR      NOT NULL,
    credits VARCHAR (80)     NOT NULL,
    description   VARCHAR   NOT NULL,
-   first_year VARCHAR(80) 	NOT NULL,
+   first_year VARCHAR(80)  NOT NULL,
    when_new VARCHAR(10)   NOT NULL,
    id SERIAL,
 
@@ -103,8 +97,10 @@ create table course(
 create table offering(
    id VARCHAR (50)      NOT NULL ,
    semester VARCHAR (50)     NOT NULL,
-   pf VARCHAR(50) 	NOT NULL, /* NEED SOME SORT OF BOOLEAN TYPE */
+   pf VARCHAR(50)    NOT NULL, /* NEED SOME SORT OF BOOLEAN TYPE */
    max_students INT  NOT NULL,
+   time_ VARCHAR (50) NOT NULL,
+   days VARCHAR (50) NOT NULL,
    PRIMARY KEY (id, semester)
 );
 
@@ -137,19 +133,6 @@ create table taughtIn(
    room_code VARCHAR REFERENCES classroom(code)
 );
 
-create table locatedIn(
-   building VARCHAR REFERENCES building(name),
-   room_code VARCHAR REFERENCES classroom(code)
-);
-
-create table offeredOn(
-   o_id VARCHAR,
-   semester VARCHAR,
-   day VARCHAR REFERENCES weekday(name),
-   time_start TIME,
-   time_end TIME,
-   FOREIGN KEY (o_id, semester) REFERENCES offering (id, semester)
-);
 
 create table Requires(
    c_id SERIAL REFERENCES course (id),
