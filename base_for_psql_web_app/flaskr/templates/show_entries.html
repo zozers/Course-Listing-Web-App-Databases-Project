@@ -1,76 +1,140 @@
 <!DOCTYPE html>
-{% extends "new_layout.html" %} 
+{% extends "new_layout.html" %}
 
  {% block content %}
     {% if session.logged_in %}
 
     {% endif %}
 
-  <div class="container_search">
+<div id="buttons">
+	<button id="buttonSearch">Search</button>
+	<button id="pushInSelected">Push</button>
+</div>
 
-      <div class="course_search">
-      <h1>Course Search</h1>
-    <form action="/" method=post>
-      <input type=text name=search value="{{request.form.search}}"></br>
-      
-      <h1>Professor Search</h1>
-      <input type=text name=search_1 value="{{request.form.search}}"></br>
+<div class="container_mine">
+	<table id="myCourseTable">
+		<thead>
+          <tr>
+            <th>Id</th>
+            <th>Semester</th>
+            <th>Professor Name</th>
+            <th>Course Name</th>
+            <th>Credits</th>
+            <th>Description</th>
+            <th>First Year</th>
+            <th>New</th>
+          </tr>
+        </thead>
 
+		<tbody id="myCourses">
+		</tbody>
 
-      <h1>Credit Select</h1>
+	</table>
+</div>
 
-      <input type="checkbox" name="credit_1" value="1" >1<br>
-      <input type="checkbox" name="credit_2" value="2" >2<br>
-      <input type="checkbox" name="credit_3" value="3" >3<br>
-      <input type="checkbox" name="credit_4" value="4" >4<br>
-      <input type="checkbox" name="credit_lab" value="lab credit" >Lab credit<br>
-
-    <h1>Department Select</h1>
-
-      <input type="checkbox" name="PACE" value="PACE" >PACE
-      <input type="checkbox" name="FS" value="FS" >FS
-      <input type="checkbox" name="AFAM" value="AFAM" >AFAM
-      <input type="checkbox" name="BIO" value="BIO" >BIO
-      <input type="checkbox" name="ANTH" value="ANTH" >ANTH
-      <input type="checkbox" name="LING" value="LING" >LING
-      <input type="checkbox" name="ARTH" value="ARTH" >ARTH
-      <input type="checkbox" name="DANC" value="DANC" >DANC
-      <input type="checkbox" name="PHIL" value="PHIL" >PHIL
-      <input type="checkbox" name="ARTS" value="ARTS" >ARTS
-      <input type="checkbox" name="WS" value="WS" >WS
-      <input type="checkbox" name="CMPT" value="CMPT" >CMPT<br>
-      <input type="checkbox" name="COM" value="COM" >COM
-      <input type="checkbox" name="CHEM" value="CHEM" >CHEM
-      <input type="checkbox" name="ECON" value="ECON" >ECON
-      <input type="checkbox" name="ENVS" value="ENVS" >ENVS
-      <input type="checkbox" name="FILM" value="FILM" >FILM
-      <input type="checkbox" name="HIST" value="HIST" >HIST
-      <input type="checkbox" name="GEOG" value="GEOG" >GEOG
-      <input type="checkbox" name="LIT" value="LIT" >LIT
-      <input type="checkbox" name="LR" value="LR" >LR
-      <input type="checkbox" name="MATH" value="MATH" >MATH
-      <input type="checkbox" name="MUS" value="MUS" >MUS
-      <input type="checkbox" name="NATS" value="NATS" >NATS
-      <input type="checkbox" name="PHOT" value="PHOT" >PHOT
-      <input type="checkbox" name="PHYS" value="PHYS" >PHYS
-      <input type="checkbox" name="POLS" value="POLS" >POLS<br>
-      <input type="checkbox" name="PSYC" value="PSYC" >PSYC
-      <input type="checkbox" name="SOCS" value="SOCS" >SOCS
-      <input type="checkbox" name="THEA" value="THEA" >THEA
-      <input type="checkbox" name="SART" value="SART" >SART
-      <input type="checkbox" name="CHIN" value="CHIN" >CHIN
-      <input type="checkbox" name="ESL" value="ESL" >ESL
-      <input type="checkbox" name="FREN" value="FREN" >FREN
-      <input type="checkbox" name="GERM" value="GERM" >GERM
-      <input type="checkbox" name="SPAN" value="SPAN" >SPAN
+<div class="container_search">
+ 	<h1> Filter Search </h1>
+	<form id="searchForm" action="/" method=post>
+		<input type=text name=search value="{{request.form.search}}">
+		<h2>Course Search</h2>
+		<h2>Professor Search</h2>
+		<input type=text name=search_1 value="{{request.form.search}}">
 
 
+	    <h2>Credit Select</h2>
 
 
-      <div class="actions"><input type=submit value="Search"></div>
+		<input type="checkbox" name="credit_1" value="1" >
+		<p>1</p>
+		<input type="checkbox" name="credit_2" value="2" >
+		<p>2</p>
+		<input type="checkbox" name="credit_3" value="3" >
+		<p>3</p>
+		<input type="checkbox" name="credit_4" value="4" >
+		<p>4</p>
+		<input type="checkbox" name="credit_lab" value="lab credit" >
+		<p>Lab credit</p>
 
-  </form>
-  </div>
+		<h2>Department Select</h2>
+
+		<input type="checkbox" name="PACE" value="PACE" >
+		<p>PACE</p>
+		<input type="checkbox" name="FS" value="FS" >
+		<p>FS</p>
+		<input type="checkbox" name="AFAM" value="AFAM" >
+		<p>AFAM</p>
+		<input type="checkbox" name="BIO" value="BIO" >
+		<p>BIO</p>
+		<input type="checkbox" name="ANTH" value="ANTH" >
+		<p>ANTH</p>
+		<input type="checkbox" name="LING" value="LING" >
+		<p>LING</p>
+		<input type="checkbox" name="ARTH" value="ARTH" >
+		<p>ARTH</p>
+		<input type="checkbox" name="DANC" value="DANC" >
+		<p>DANC</p>
+		<input type="checkbox" name="PHIL" value="PHIL" >
+		<p>PHIL</p>
+		<input type="checkbox" name="ARTS" value="ARTS" >
+		<p>ARTS</p>
+		<input type="checkbox" name="WS" value="WS" >
+		<p>WS</p>
+		<input type="checkbox" name="CMPT" value="CMPT" >
+		<p>CMPT</p>
+		<input type="checkbox" name="COM" value="COM" >
+		<p>COM</p>
+		<input type="checkbox" name="CHEM" value="CHEM" >
+		<p>CHEM</p>
+		<input type="checkbox" name="ECON" value="ECON" >
+		<p>ECON</p>
+		<input type="checkbox" name="ENVS" value="ENVS" >
+		<p>ENVS</p>
+		<input type="checkbox" name="FILM" value="FILM" >
+		<p>FILM</p>
+		<input type="checkbox" name="HIST" value="HIST" >
+		<p>HIST</p>
+		<input type="checkbox" name="GEOG" value="GEOG" >
+		<p>GEOG</p>
+		<input type="checkbox" name="LIT" value="LIT" >
+		<p>LIT</p>
+		<input type="checkbox" name="LR" value="LR" >
+		<p>LR</p>
+		<input type="checkbox" name="MATH" value="MATH" >
+		<p>MATH</p>
+		<input type="checkbox" name="MUS" value="MUS" >
+		<p>MUS</p>
+		<input type="checkbox" name="NATS" value="NATS" >
+		<p>NATS</p>
+		<input type="checkbox" name="PHOT" value="PHOT" >
+		<p>PHOT</p>
+		<input type="checkbox" name="PHYS" value="PHYS" >
+		<p>PHYS</p>
+		<input type="checkbox" name="POLS" value="POLS" >
+		<p>POLS</p>
+		<input type="checkbox" name="PSYC" value="PSYC" >
+		<p>PSYC</p>
+		<input type="checkbox" name="SOCS" value="SOCS" >
+		<p>SOCS</p>
+		<input type="checkbox" name="THEA" value="THEA" >
+		<p>THEA</p>
+		<input type="checkbox" name="SART" value="SART" >
+		<p>SART</p>
+		<input type="checkbox" name="CHIN" value="CHIN" >
+		<p>CHIN</p>
+		<input type="checkbox" name="ESL" value="ESL" >
+		<p>ESL</p>
+		<input type="checkbox" name="FREN" value="FREN" >
+		<p>FREN</p>
+		<input type="checkbox" name="GERM" value="GERM" >
+		<p>GERM</p>
+		<input type="checkbox" name="SPAN" value="SPAN" >
+		<p>SPAN</p>
+
+		<div id="actions">
+		  <input id="formButton" type=submit value="Search">
+		</div>
+
+	</form>
 </div>
 
 
@@ -85,17 +149,17 @@
 
     </div>
 
-     <table class="table">
+     <table id="courseTable" class="table">
       <thead>
         <tr>
           <th>Id</th>
           <th>Semester</th>
           <th>Professor Name</th>
           <th>Course Name</th>
-          <th>Credits</th> 
-          <th>Description</th> 
+          <th>Credits</th>
+          <th>Description</th>
           <th>First Year</th>
-          <th>New</th>    
+          <th>New</th>
         </tr>
       </thead>
       {% for entry in data %}
@@ -103,7 +167,7 @@
           <tr>
             <td>{{ entry.id }}
             <td>{{ entry.semester}}
-            <td>{{ entry.name }}            
+            <td>{{ entry.name }}
             <td>{{ entry[2]}}
             <td>{{ entry.credits }}
             <td>{{ entry.description}}
@@ -113,7 +177,7 @@
         </tbody>
     </div>
 
-        
+
     {% endfor %}
     </table>
 {% endblock %}

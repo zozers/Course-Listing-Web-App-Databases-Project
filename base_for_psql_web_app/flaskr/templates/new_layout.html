@@ -1,5 +1,6 @@
 <!DOCTYPE html>
     <head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title>Simon's Rock Course Guide</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap-theme.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -9,11 +10,51 @@
         >
     </head>
     <body>
-    <div class="container">
+	    <div class="container">
 
-        {% block content %}
-        {% endblock %}
-            
-    </div>
+	        {% block content %}
+	        {% endblock %}
+
+	    </div>
+		<script type="text/javascript">
+
+			var guideSelected = [];
+			var myCourses = [];
+			var mySelected = [];
+
+
+			currentHTML = localStorage.getItem("currentHTML");
+			alert(currentHTML);
+
+			if (typeof currentHTML == "undefined"){
+				var currentHTML = "";
+			}
+
+			$("#myCourses").html(currentHTML);
+
+			$("#buttonSearch").click(function(){
+				$("#formButton").click();
+			});
+
+			$("#courseTable tr").click(function() {
+    			$(this).toggleClass("highlight");
+				guideSelected.push($(this).html());
+   			});
+
+			$("#pushInSelected").click(function(){
+				var arrayLength = guideSelected.length;
+				var newHTML = "";
+				for (var i = 0; i < arrayLength; i++) {
+					newHTML += "<tr>" + String(guideSelected[i]); "</tr>"
+    			}
+				$("#myCourses").html(newHTML);
+				currentHTML += newHTML;
+				localStorage.setItem("currentHTML", String(currentHTML));
+				alert(localStorage.getItem("currentHTML"));
+			});
+
+
+		</script>
+
   </body>
 </html>
