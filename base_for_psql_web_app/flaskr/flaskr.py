@@ -12,22 +12,14 @@ app.config.update(dict(
     DATABASE=os.path.join(app.root_path, 'flaskr.db'),
     SECRET_KEY='development key',
     USERNAME='test',
-    PASSWORD='penis'
-))
+    PASSWORD='penis'))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 
 def connect_db():
-<<<<<<< HEAD
 	"""Connects to the specific database."""
 	rv = psycopg2.connect(dbname="course_guide", user="robby", password="penis")
 	return rv
-=======
-    """Connects to the specific database."""
-    rv = psycopg2.connect(dbname="course_guide")
-    return rv
->>>>>>> 487fcb20ed3cf4e3230a83563cdaaa2a0d714581
-
 
 def init_db():
     db = get_db()
@@ -59,7 +51,6 @@ def get_db():
 @app.teardown_appcontext
 
 def close_db(error):
-<<<<<<< HEAD
 	"""Closes the database again at the end of the request."""
 	if hasattr(g, 'course_guide'):
 		g.course_guide.close()
@@ -115,7 +106,6 @@ def delete_entry():
 	return redirect(url_for('show_entries'))
 
 
-
 @app.route('/edit')
 def edit_entry():
 	db = get_db()
@@ -125,7 +115,6 @@ def edit_entry():
 	entries = db.fetchall()
 	# print("entries is ", entries)
 	return render_template('edit.html', entry=entries[0])
-
 
 
 @app.route('/update_db', methods=['POST'])
@@ -163,7 +152,6 @@ def logout():
     session.pop('logged_in', None)
     flash('You were logged out')
     return redirect(url_for('show_entries'))
-=======
     """Closes the database again at the end of the request."""
     if hasattr(g, 'course_guide'):
         g.course_guide.close()
@@ -178,21 +166,19 @@ def show_courses():
     return render_template('future_show_entries.html', entries=courses)
 
 
-
-
 @app.route('/', methods=['GET', 'POST'])
 def search():
     if request.method == "POST":
         db = get_db()
         db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
         credit_list = []
-        
+
         for i in ['1','2','3','4','lab']:
             try:
                 credit_list.append(request.form['credit_'+ i])
             except:
                 pass
-        
+
         dep_list = []
         for i in ["PACE", "FS", "AFAM","BIO","ANTH",'LING','ARTH','DANC','PHIL','ARTS','WS','CMPT','COM','CHEM','ECON','ENVS','FILM','HIST','GEOG','LIT','LR','MATH','MUS','NATS','PHOT','PHYS','POLS','PSYC','SOCS','THEA','SART','CHIN','ESL','FREN','GERM','SPAN']:
             try:
@@ -202,8 +188,8 @@ def search():
 
         query = ''' SELECT t.semester, o.id, c.name, p.name, c.credits, c.description, c.first_year, c.when_new FROM course c, teaches t, professor p, offering o, implements i
                     WHERE o.semester = 'S18' AND o.id = i.o_id AND c.id = i.c_id AND o.id = t.o_id AND p.id = t.p_id AND (c.name ILIKE %s OR c.description ILIKE %s) AND (p.name ILIKE %s) '''
-        
-        for i in credit_list: 
+
+        for i in credit_list:
             if len(credit_list) > 0:
                 if credit_list.index(i) == 0:
                     query += ' and ( c.credits ILIKE ' + "'" + i + "____'"
@@ -211,12 +197,12 @@ def search():
                 else:
                     query += ' or c.credits ILIKE ' + "'" + i + "____'"
                     query += ' or c.credits ILIKE ' + "'" + i + "'"
-        
+
         if len(credit_list) > 0:
             query += ')'
 
 
-        for i in dep_list: 
+        for i in dep_list:
             if len(dep_list) > 0:
                 if dep_list.index(i) == 0:
                     query += ' and ( o.id ILIKE ' + "'" + i + "___'"
@@ -224,36 +210,19 @@ def search():
                 else:
                     query += ' or o.id ILIKE ' + "'" + i + "___'"
                     query += ' or o.id ILIKE ' + "'" + i + "_____'"
-        
+
         if len(dep_list) > 0:
             query += ')'
-         
+
         print(request.form['search_1'])
 
         cur = db.execute(query, ('%'+request.form['search']+'%', '%'+request.form['search']+'%', '%'+request.form['search_1']+'%'))
-        
+
         data = db.fetchall()
 
-
         return render_template("future_show_entries.html", data=data)
-    
+
     return render_template('input_search.html')
-
-
->>>>>>> 487fcb20ed3cf4e3230a83563cdaaa2a0d714581
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
-<<<<<<< HEAD
-=======
-
-
-
-
-
-
-
-    
->>>>>>> 487fcb20ed3cf4e3230a83563cdaaa2a0d714581
