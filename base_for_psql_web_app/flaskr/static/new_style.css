@@ -4,10 +4,13 @@ h1, h2          { font-family: 'Georgia', serif; margin: 0; text-align: center; 
 h1              { border-bottom: 15px solid #3c5a6a; }
 h2              { font-size: 1.2em; }
 
-.container		{font-family: sans-serif; background: #3c5a6a;  width: 100%; margin: 0 auto;  }
+.container		{font-family: sans-serif; background: #3c5a6a;  width: 80%; margin:0 auto;}
 
-table 			{font-family: sans-serif; background: #d0dfe7; width: 100%; margin: 0 auto;     
-					border-collapse:collapse; border-radius: 25px; overflow:hidden; border: 5px solid #63757e; }	
+.container_search		{font-family: sans-serif; background: #3c5a6a;  width: 80%; margin:0 auto; position: absolute;}
+.container_table		{font-family: sans-serif; background: #3c5a6a;  width: 80%; margin:0 auto; position: absolute;}
+
+table 			{font-family: sans-serif; background: #d0dfe7; width: 80%; margin: 0 auto;     
+					border-collapse:collapse; border-radius: 25px; overflow:hidden; border: 5px solid #63757e;}	
 tr, td 			{font-family: sans-serif; background: #d0dfe7; border-collapse: collapse; border: 2px solid #47545a; font-size: 14px;}
 th 				{font-family: sans-serif; background: #63757e; border-collapse: collapse; border: 2px solid #63757e; text-align: center;}
 
