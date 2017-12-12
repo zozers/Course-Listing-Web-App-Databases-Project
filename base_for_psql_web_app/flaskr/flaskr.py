@@ -56,107 +56,6 @@ def close_db(error):
 		g.course_guide.close()
 
 
-@app.route('/')
-def show_entries():
-	db = get_db()
-	db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-	cur = db.execute('select * from course order by course.name')
-	entries = db.fetchall()
-	# print("entries is ", entries)
-	return render_template('future_show_entries.html', entries=entries)
-
-
-
-@app.route('/add', methods=['POST'])
-def add_entry():
-	if not session.get('logged_in'):
-		abort(401)
-	db = get_db()
-	cur = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-
-	if (request.form['title'] == ""):
-		flash('New entry cannot have an empty title!!')
-		return redirect(url_for('show_entries'))
-	if (request.form['text'] == ""):
-		flash('New entry cannot have an empty entry!!')
-		return redirect(url_for('show_entries'))
-
-	cur.execute('insert into entries (title, text) values(%s,%s)',
-		(request.form['title'], request.form['text']))
-
-	db.commit()
-	# flash(request.form['id'])
-	return redirect(url_for('show_entries'))
-
-
-
-@app.route('/delete', methods=['POST'])
-def delete_entry():
-	if not  session.get('logged_in'):
-		abort(401)
-	db = get_db()
-	cur = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-	# print(request.form['id'])
-
-	cur.execute('delete from entries where id = (%s)',(
-		request.form['id'],))
-
-	db.commit()
-	flash('Entry was successfully deleted')
-	return redirect(url_for('show_entries'))
-
-
-@app.route('/edit')
-def edit_entry():
-	db = get_db()
-	db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-	cur = db.execute('select title, text, id from entries where id =(%s)',(
-		request.args.get('id'),))
-	entries = db.fetchall()
-	# print("entries is ", entries)
-	return render_template('edit.html', entry=entries[0])
-
-
-@app.route('/update_db', methods=['POST'])
-def update_entry():
-	if not  session.get('logged_in'):
-		abort(401)
-	db = get_db()
-	cur = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-	# print(request.form['id'])
-
-	cur.execute('update entries set title = (%s), text = (%s) where id = (%s);',(
-		request.form['title'], request.form['text'], request.form['id'],))
-
-	db.commit()
-	flash('Entry was successfully Updated')
-	return redirect(url_for('show_entries'))
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-	error = None
-	if request.method == 'POST':
-		if request.form['username'] != app.config['USERNAME']:
-			error = 'Invalid username'
-		elif request.form['password'] != app.config['PASSWORD']:
-			error = 'Invalid password'
-		else:
-			session['logged_in'] = True
-			flash('You were logged in')
-			return redirect(url_for('show_entries'))
-	return render_template('login.html', error=error)
-
-@app.route('/logout')
-def logout():
-    session.pop('logged_in', None)
-    flash('You were logged out')
-    return redirect(url_for('show_entries'))
-    """Closes the database again at the end of the request."""
-    if hasattr(g, 'course_guide'):
-        g.course_guide.close()
-
-
 @app.route('/courses')
 def show_courses():
     db = get_db()
@@ -213,13 +112,11 @@ def search():
 
         if len(dep_list) > 0:
             query += ')'
-<<<<<<< HEAD
+
          
         print(query)
-=======
 
         print(request.form['search_1'])
->>>>>>> 4f08bc206ab925078f9bd61cb7466779a76e5ea8
 
         cur = db.execute(query, ('%'+request.form['search']+'%', '%'+request.form['search']+'%', '%'+request.form['search_1']+'%'))
 
