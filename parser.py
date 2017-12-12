@@ -40,6 +40,7 @@ new_l = new_l[3:]  # multiples of by 8
 course_name = course_name[49:]
 
 nlink = []
+
 for i in course_name:
 	
 	if "Lab" == i[(len(i)-3):(len(i))]:
@@ -67,7 +68,6 @@ for i in range(len(new_l)):
 		else:
 			try:
 				if add_lab_b == True:
-					# add_lab_b = False
 
 					last = final_lst[len(final_lst)-(add_lab):len(final_lst)]
 					
@@ -149,6 +149,8 @@ for i in unfinished:
 
 
 description_name = description_name[description_name.index("Course Descriptions")+1:]
+
+
 for i in course_data:
 	if " "+i[2] in description_name:
 		i += (description[description_name.index(" "+i[2])])
@@ -161,9 +163,44 @@ course_data = []
 
 print(len(course_data[0]))
 
-with open('course_guide_data.csv', 'w', newline='') as csvfile:
-    writer = csv.writer(csvfile, delimiter=',',quoting=csv.QUOTE_ALL)
-    for course in course_data:
-   		writer.writerow(i.replace("'", '"') for i in course)
 
-csvfile.close()
+# for i in course_data:
+
+	
+
+with open('course_guide_data.csv', 'w', newline='') as csvfile:
+	writer = csv.writer(csvfile, delimiter=',',quoting=csv.QUOTE_ALL)
+	for i in course_data:
+		
+		week_time_class = i[4]
+		if week_time_class != "TBD" and "and " not in week_time_class:
+			split_lst = week_time_class.split()
+			week = split_lst[0]
+			split_lst = split_lst[1:]
+			split_str = " ".join(split_lst)
+			split_lst = split_str.split('in')
+			time = split_lst[0]
+			classroom = split_lst[1]
+			before = i[:4]
+			after = i[5:]
+			before += [week]
+			before+=[time]
+			before+= [classroom]
+			i = before + after
+		else:
+			before = i[:4]
+			after = i[5:]
+			before += ["TBD"]
+			before+= ["TBD"]
+			before+= ["TBD"]
+			i = before + after
+		writer.writerow(i)
+
+
+
+
+
+
+
+
+
