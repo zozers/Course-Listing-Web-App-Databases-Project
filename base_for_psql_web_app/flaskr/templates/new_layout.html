@@ -22,13 +22,18 @@
 			var myCourses = [];
 			var mySelected = [];
 
-			alert(localStorage.getItem("variableName"));
+
+			currentHTML = localStorage.getItem("currentHTML");
+			alert(currentHTML);
+
+			if (typeof currentHTML == "undefined"){
+				var currentHTML = "";
+			}
+
+			$("#myCourses").html(currentHTML);
 
 			$("#buttonSearch").click(function(){
 				$("#formButton").click();
-				// Storing the data:
-				localStorage.setItem("variableName","Text");
-				// Receiving the data:
 			});
 
 			$("#courseTable tr").click(function() {
@@ -43,6 +48,9 @@
 					newHTML += "<tr>" + String(guideSelected[i]); "</tr>"
     			}
 				$("#myCourses").html(newHTML);
+				currentHTML += newHTML;
+				localStorage.setItem("currentHTML", String(currentHTML));
+				alert(localStorage.getItem("currentHTML"));
 			});
 
 
