@@ -117,7 +117,7 @@ def search():
         if len(dep_list) > 0:
             query += ')'
          
-        print(request.form['search_1'])
+        print(query)
 
         cur = db.execute(query, ('%'+request.form['search']+'%', '%'+request.form['search']+'%', '%'+request.form['search_1']+'%'))
         
