@@ -18,7 +18,7 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 def connect_db():
 	"""Connects to the specific database."""
-	rv = psycopg2.connect(dbname="course_guide")
+	rv = psycopg2.connect(dbname="course_guide", user="robby", password="penis")
 	return rv
 
 def init_db():
@@ -86,7 +86,7 @@ def search():
                 pass
 
         query = ''' SELECT t.semester, o.id, c.name, p.name, c.credits, c.description, c.first_year, c.when_new FROM course c, teaches t, professor p, offering o, implements i
-                    WHERE o.semester = 'S18' AND o.id = i.o_id AND c.id = i.c_id AND o.id = t.o_id AND p.id = t.p_id AND (c.name ILIKE %s OR c.description ILIKE %s) AND (p.name ILIKE %s) '''
+                    WHERE o.semester = 'S17' AND o.id = i.o_id AND c.id = i.c_id AND o.id = t.o_id AND p.id = t.p_id AND (c.name ILIKE %s OR c.description ILIKE %s) AND (p.name ILIKE %s) '''
 
         for i in credit_list:
             if len(credit_list) > 0:
@@ -113,7 +113,7 @@ def search():
         if len(dep_list) > 0:
             query += ')'
 
-         
+
         print(query)
 
         print(request.form['search_1'])
