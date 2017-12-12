@@ -122,9 +122,9 @@ def search():
 
         data = db.fetchall()
 
-        return render_template("future_show_entries.html", data=data)
+        return render_template("show_entries.html", data=data)
 
-    return render_template('input_search.html')
+    return render_template('show_entries.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
