@@ -1,0 +1,74 @@
+{% extends "new_layout.html" %}
+{% block content %}
+
+
+<div class="course_search">
+<h1>Course Search</h1>
+<form action="/" method=post>
+    <input type=text name=search value="{{request.form.search}}"></br>
+    
+    <h1>Professor Search</h1>
+    <input type=text name=search_1 value="{{request.form.search}}"></br>
+
+
+    <h1>Credit Select</h1>
+
+    <input type="checkbox" name="credit_1" value="1" >1<br>
+  	<input type="checkbox" name="credit_2" value="2" >2<br>
+  	<input type="checkbox" name="credit_3" value="3" >3<br>
+  	<input type="checkbox" name="credit_4" value="4" >4<br>
+  	<input type="checkbox" name="credit_lab" value="lab credit" >Lab credit<br>
+
+	<h1>Department Select</h1>
+
+    <input type="checkbox" name="PACE" value="PACE" >PACE
+  	<input type="checkbox" name="FS" value="FS" >FS
+  	<input type="checkbox" name="AFAM" value="AFAM" >AFAM
+  	<input type="checkbox" name="BIO" value="BIO" >BIO
+  	<input type="checkbox" name="ANTH" value="ANTH" >ANTH
+  	<input type="checkbox" name="LING" value="LING" >LING
+    <input type="checkbox" name="ARTH" value="ARTH" >ARTH
+  	<input type="checkbox" name="DANC" value="DANC" >DANC
+  	<input type="checkbox" name="PHIL" value="PHIL" >PHIL
+  	<input type="checkbox" name="ARTS" value="ARTS" >ARTS
+    <input type="checkbox" name="WS" value="WS" >WS
+  	<input type="checkbox" name="CMPT" value="CMPT" >CMPT<br>
+  	<input type="checkbox" name="COM" value="COM" >COM
+  	<input type="checkbox" name="CHEM" value="CHEM" >CHEM
+  	<input type="checkbox" name="ECON" value="ECON" >ECON
+    <input type="checkbox" name="ENVS" value="ENVS" >ENVS
+  	<input type="checkbox" name="FILM" value="FILM" >FILM
+  	<input type="checkbox" name="HIST" value="HIST" >HIST
+  	<input type="checkbox" name="GEOG" value="GEOG" >GEOG
+  	<input type="checkbox" name="LIT" value="LIT" >LIT
+  	<input type="checkbox" name="LR" value="LR" >LR
+  	<input type="checkbox" name="MATH" value="MATH" >MATH
+  	<input type="checkbox" name="MUS" value="MUS" >MUS
+  	<input type="checkbox" name="NATS" value="NATS" >NATS
+  	<input type="checkbox" name="PHOT" value="PHOT" >PHOT
+  	<input type="checkbox" name="PHYS" value="PHYS" >PHYS
+  	<input type="checkbox" name="POLS" value="POLS" >POLS<br>
+  	<input type="checkbox" name="PSYC" value="PSYC" >PSYC
+  	<input type="checkbox" name="SOCS" value="SOCS" >SOCS
+  	<input type="checkbox" name="THEA" value="THEA" >THEA
+  	<input type="checkbox" name="SART" value="SART" >SART
+  	<input type="checkbox" name="CHIN" value="CHIN" >CHIN
+  	<input type="checkbox" name="ESL" value="ESL" >ESL
+  	<input type="checkbox" name="FREN" value="FREN" >FREN
+  	<input type="checkbox" name="GERM" value="GERM" >GERM
+  	<input type="checkbox" name="SPAN" value="SPAN" >SPAN
+
+
+
+
+    <div class="actions"><input type=submit value="Search"></div>
+
+</form>
+</div>
+
+{% for message in get_flashed_messages() %}
+<div class=flash>
+    {{ message }}
+</div>
+{% endfor %}
+{% endblock %}
