@@ -36,7 +36,7 @@ h2 {
 }
 
 .container_search {
-	border: 4px solid #113647;
+	border: 5px solid #3c5a6a;
 	font-family: sans-serif;
 	background-color: #3c5a6a;
 
@@ -50,7 +50,8 @@ h2 {
 }
 
 .container_table {
-	border: 4px solid #113647;
+	border: 5px solid #3c5a6a;
+
 	font-family: sans-serif;
 	background-color: #3c5a6a;
 	margin:0 auto;
@@ -65,7 +66,8 @@ h2 {
 }
 
 .container_mine {
-	border: 4px solid #113647;
+	border: 5px solid #3c5a6a;
+
 	width: 60%;
 	height: 40%;
 	position: fixed;
@@ -135,7 +137,7 @@ h2 {
 table 			{
 	font-family: sans-serif;
 	background: #d0dfe7;
-	width: 95%;
+	width: 98%;
 	margin: 0 auto;
 	border-collapse: collapse;
 	border-radius: 25px;
