@@ -16,6 +16,7 @@
 	    </div>
 		<script type="text/javascript">
 
+
             /* all currently yellow rows in bottom table*/
 			var guideSelected = [];
             /* all course to be displayed in top left table */
@@ -26,9 +27,13 @@
 
             /* collect stored item (between refreshes) */
 			courseArray = localStorage.getItem("courseArray");
+            courseArray = string_to_arrays(courseArray);
+            console.log(courseArray);
             /* initialize if needed */
 			if (typeof courseArray == "undefined" || courseArray == null){
 				var courseArray = [];
+                $("#myCourses").html("");
+                $("#clearAll").click();
             /* else, use existing info to create the html */
 			} else {
                 currentHTML = create_HTML(courseArray);
@@ -41,15 +46,22 @@
 				$("#formButton").click();
 			});
 
+            $("#clearAll").click(function(){
+                courseArray=[];
+                $("#myCourses").html("");
+                localStorage.setItem("courseArray", "");
+            })
+
 
             /* maintains highlighting and keeps track of
             guideSelected*/
 			$("#courseTable tr").click(function() {
                 var new_course = filter_values($(this).html());
                 if (hasClass(this, "highlight")){
+                    /* if clicked while highlighted, remove that item */
                     guideSelected = guideSelected.splice(isInny(new_course, guideSelected), 1);
                 } else {
-                    /* add if not exists */
+                    /* if clicked and not highlighted already, add it */
                     if (isInny(new_course, guideSelected) == -1){
                         guideSelected.push(new_course);
                     }
@@ -63,16 +75,17 @@
             mySelected*/
 			$("#myCourses tr").click(function() {
                 var new_course = soft_filter_values($(this).html());
+                console.log(new_course);
                 if (hasClass(this, "highlight")){
-                    mySelected = mySelected.splice(isInny(new_course, mySelected), 1);
+                    /* if clicked while highlighted, remove that item */
+                    mySelected.splice(isInny(new_course, mySelected), 1);
                 } else {
-                    /* add if not exists */
+                    /* if clicked while not highlighted, add it */
                     if (isInny(new_course, mySelected) == -1){
                         mySelected.push(new_course);
                     }
                 }
                 $(this).toggleClass("highlight");
-                console.log(mySelected);
    			});
 
 
@@ -92,20 +105,23 @@
                     }
                 }
                 $("#myCourses").html(create_HTML(courseArray));
-				localStorage.setItem("courseArray", courseArray);
+
+
+                localStorage.setItem("courseArray", courseArray);
+
 			});
 
 
 			/* pop out currently selected courses (above)*/
 			$("#popOutSelected").click(function(){
-			    var conflict;
-                non_overlaps = [];
                 for (var i=0; i<mySelected.length; i++ ){
                     /* for all selected */
-                    courseArray.splice(isInny(mySelected[i], courseArray));
+                    courseArray.splice(isInny(mySelected[i], courseArray), 1);
+                    mySelected.splice(isInny(mySelected[i], mySelected), 1);
 
                 }
                 $("#myCourses").html(create_HTML(courseArray));
+                localStorage.setItem("courseArray", courseArray);
 			});
 
 
@@ -133,7 +149,6 @@
             function filter_values(string){
                 /* string: og value taken from bottom table html */
                 var final_arr = [];
-                var final_str = "";
                 var not_include = [0,2,5,10,11];
 
                 var values = string.split("<td>");
@@ -161,13 +176,13 @@
 			function soft_filter_values(string){
                 /* string: og value taken from top table html */
                 var final_arr = [];
-                var final_str = "";
                 var values = string.split("<td>");
                 var new_values = [];
-                for (var i = 0; i < values.length; i++) {
+                for (var i = 1; i < values.length; i++) {
                     final_arr.push((values[i].split("</td>"))[0]);
                 }
                 /* returns acceptable array to be placed into mySelected */
+                console.log(final_arr);
                 return final_arr;
             }
 
@@ -196,6 +211,34 @@
                 }
                 return -1;
             }
+
+
+            function string_to_arrays(string){
+
+                if (string == ""){
+                    return [];
+                }
+                /* string: og value taken from bottom table html */
+                var final_arr = [];
+                
+                var values = string.split(",");
+
+
+                for (var i = 0; i < Number(values.length/7); i++){
+                    var temp_arr = [];
+                    for (var j = 0; j < 7; j++){
+                        temp_arr.push(values[j + (7*i)]);
+
+
+                    }
+                    final_arr.push(temp_arr);
+                }
+
+                return final_arr;
+            }
+
+
+
 		</script>
 
   </body>
