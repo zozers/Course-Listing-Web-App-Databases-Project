@@ -279,209 +279,6 @@ INSERT INTO Department(Name) VALUES ('Seminar');
 
 
 
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PACE099','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101A','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101B','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101C','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101D','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101E','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101F','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101G','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101H','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101I','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101J','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101K','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FS101L','S17','enter later',14);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('AFAM209','S17','enter later',8);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('AFAM309','S17','enter later',7);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('AFAM302','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ANTH227','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ANTH317','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LING218','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ARTH102','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ARTH220','S17','enter later',8);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ARTH320','S17','enter later',7);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ARTH306','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHIL227','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ARTS211','S17','enter later',8);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ARTS311','S17','enter later',7);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('WS218M2','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO100','S17','enter later',30);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO100LA','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO100LB','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO201','S17','enter later',30);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO201LA','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO201LB','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO276','S17','enter later',18);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO303','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('BIO312','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHEM101A','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHEM101B','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHEM101C','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHEM101LA','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHEM101LB','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHEM101LC','S17','enter later',10);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHEM303','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('COM203M1','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('COM204M2','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CMPT100','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CMPT220','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CMPT242','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CMPT243','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CMPT353','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CMPT364','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC101','S17','enter later',10);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC201','S17','enter later',10);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC108','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC114','S17','enter later',10);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC214','S17','enter later',10);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC126','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC127','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC230','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC330','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC240','S17','enter later',4);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC340','S17','enter later',4);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('DANC440','S17','enter later',4);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ECON101','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ECON204','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ECON240','S17','enter later',8);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ENVS107M2','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ENVS110M1','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ENVS112M2','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ENVS208M1','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ENVS215','S17','enter later',8);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ENVS315','S17','enter later',7);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FILM231','S17','enter later',8);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FILM331','S17','enter later',7);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FILM241','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FILM341','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('WS213','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('GEOG229','S17','enter later',8);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('GEOG328','S17','enter later',7);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('HIST234','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('HIST244','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('HIST261','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('HIST350','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT105M','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LR115M1','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LR117M2','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LR125M2','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LING105M1','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT213','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT214M1','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT216M2','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT219M1','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT256M2','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT288','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT289','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT324','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LIT330','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH099','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH101','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH109','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH110A','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH110B','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH210','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH211A','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH211B','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH221A','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH221B','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH313','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH331','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH364','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MATH366','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS103','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS117','S17','enter later',30);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS207','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS210','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS222','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS278','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS280','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS289','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS309','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS180P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS181P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS182P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS183P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS184P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS185P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS187P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS188P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS189P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS190P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS191P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS192P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS193P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS195P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS196P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS197P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS198P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('MUS199P','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('NATS116','S17','enter later',16);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('NATS150','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('NATS150L','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHIL175','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHIL213','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHIL313','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHOT102','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHOT203','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHOT207','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHOT307','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHYS101','S17','enter later',40);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHYS101LA','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHYS101LB','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHYS221','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHYS303','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PHYS330','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('POLS235','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('POLS240','S17','enter later',7);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PSYC100','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PSYC202','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PSYC203','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PSYC310','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('PSYC325','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SOCS224','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SOCS309','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SOCS320','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SOC100','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART106','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART114','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART115M2','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART152','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART207','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART367','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART218','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART231','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SART331','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA107M2','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA108','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA208','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA121','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA201','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA206','S17','enter later',8);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA306','S17','enter later',7);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA218','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA219','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA319','S17','enter later',6);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('THEA232','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHIN101','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('CHIN205','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('ESL098','S17','enter later',12);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FREN101','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('FREN205','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('GERM101','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('GERM205','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LATN101','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('LATN205','S17','enter later',20);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SPAN101A','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SPAN101B','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SPAN204','S17','enter later',15);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SPAN205','S17','enter later',16);
--- INSERT INTO Offering(id,Semester,PF,Max_students) VALUES ('SPAN211','S17','enter later',15);
-
-
-
-
 INSERT INTO professor(Name,ID,email) VALUES ('Aaron Turner',1,'flastname@simons-rock.edu');
 INSERT INTO professor(Name,ID,email) VALUES ('Aaron Williams',2,'flastname@simons-rock.edu');
 INSERT INTO professor(Name,ID,email) VALUES ('Aimee Michel',3,'flastname@simons-rock.edu');
@@ -608,16 +405,232 @@ INSERT INTO classroom(code,capacity) VALUES ('LIE-01',20);
 INSERT INTO classroom(code,capacity) VALUES ('LIE-02',20);
 INSERT INTO classroom(code,capacity) VALUES ('TBD',20);
 
+-- insert into offering(id, semester, pf, max_students, time_, days)
+-- 	select distinct course_offering_id as id, semester, pf, CAST(max_students as INTEGER), time_, days FROM all_data;
+
+
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PACE099','S18','Insert later',12,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101A','S18','Insert later',14,'8:30-9:55 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101B','S18','Insert later',14,'8:30-9:55 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101C','S18','Insert later',14,'10:05-11:00 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101D','S18','Insert later',14,'10:05-11:30 AM','WF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101E','S18','Insert later',14,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101F','S18','Insert later',14,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101G','S18','Insert later',14,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101H','S18','Insert later',14,'9:00-10:25 AM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101I','S18','Insert later',14,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101J','S18','Insert later',14,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101K','S18','Insert later',14,'5:40-7:05 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FS101L','S18','Insert later',14,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('AFAM209','S18','Insert later',8,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('AFAM309','S18','Insert later',7,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('AFAM302','S18','Insert later',15,'5:40-7:05 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ANTH227','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ANTH317','S18','Insert later',15,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LING218','S18','Insert later',15,'11:10-12:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ARTH102','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ARTH220','S18','Insert later',8,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ARTH320','S18','Insert later',7,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ARTH306','S18','Insert later',15,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHIL227','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ARTS211','S18','Insert later',8,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ARTS311','S18','Insert later',7,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('WS218M2','S18','Insert later',20,'3:45-5:10 PM','MF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO100','S18','Insert later',30,'9:00-9:55 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO100LA','S18','Insert later',15,'9:00-11:55 AM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO100LB','S18','Insert later',15,'2:10-5:05 PM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO201','S18','Insert later',30,'10:05-11:00 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO201LA','S18','Insert later',15,'2:10-5:05 PM','R');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO201LB','S18','Insert later',15,'12:35-3:30 PM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO276','S18','Insert later',18,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO303','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('BIO312','S18','Insert later',12,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHEM101A','S18','Insert later',15,'9:00-10:25 AM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHEM101B','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHEM101C','S18','Insert later',15,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHEM101LA','S18','Insert later',20,'2:10-5:05 PM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHEM101LB','S18','Insert later',20,'2:10-5:05 PM','R');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHEM101LC','S18','Insert later',10,'9:00-11:55 AM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHEM303','S18','Insert later',12,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('COM203M1','S18','Insert later',12,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('COM204M2','S18','Insert later',12,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CMPT100','S18','Insert later',20,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CMPT220','S18','Insert later',12,'5:40-7:05 PM','W');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CMPT242','S18','Insert later',20,'12:35-2:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CMPT243','S18','Insert later',15,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CMPT353','S18','Insert later',15,'3:45-5:10 PM','MF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CMPT364','S18','Insert later',15,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC101','S18','Insert later',10,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC201','S18','Insert later',10,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC108','S18','Insert later',15,'6:15-7:45 PM','W');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC114','S18','Insert later',10,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC214','S18','Insert later',10,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC126','S18','Insert later',6,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC127','S18','Insert later',6,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC230','S18','Insert later',6,'12:35-2:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC330','S18','Insert later',6,'12:35-2:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC240','S18','Insert later',4,'9:00-11:55 AM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC340','S18','Insert later',4,'9:00-11:55 AM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('DANC440','S18','Insert later',4,'9:00-11:55 AM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ECON101','S18','Insert later',15,'8:30-9:55 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ECON204','S18','Insert later',15,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ECON240','S18','Insert later',8,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ENVS107M2','S18','Insert later',15,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ENVS110M1','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ENVS112M2','S18','Insert later',12,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ENVS208M1','S18','Insert later',15,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ENVS215','S18','Insert later',8,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ENVS315','S18','Insert later',7,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FILM231','S18','Insert later',8,'5:40-8:35 PM','W');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FILM331','S18','Insert later',7,'5:40-8:35 PM','W');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FILM241','S18','Insert later',6,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FILM341','S18','Insert later',6,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('WS213','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('GEOG229','S18','Insert later',8,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('GEOG328','S18','Insert later',7,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('HIST234','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('HIST244','S18','Insert later',15,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('HIST261','S18','Insert later',15,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('HIST350','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT105M','S18','Insert later',15,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LR115M1','S18','Insert later',15,'3:45-5:10 PM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LR117M2','S18','Insert later',15,'9:00-10:25 AM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LR125M2','S18','Insert later',15,'9:00-10:25 AM','R');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LING105M1','S18','Insert later',15,'9:00-10:25 AM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT213','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT214M1','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT216M2','S18','Insert later',15,'5:40-8:35 PM','W');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT219M1','S18','Insert later',15,'12:35-2:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT256M2','S18','Insert later',15,'12:35-2:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT288','S18','Insert later',12,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT289','S18','Insert later',12,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT324','S18','Insert later',15,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LIT330','S18','Insert later',15,'5:40-7:05 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH099','S18','Insert later',15,'12:35-2:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH101','S18','Insert later',15,'1:05-2:00 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH109','S18','Insert later',15,'9:00-9:55 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH110A','S18','Insert later',15,'1:05-2:00 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH110B','S18','Insert later',15,'2:10-3:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH210','S18','Insert later',15,'10:05-11:00 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH211A','S18','Insert later',15,'10:05-11:00 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH211B','S18','Insert later',15,'11:10-12:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH221A','S18','Insert later',15,'1:05-2:00 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH221B','S18','Insert later',15,'2:10-3:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH313','S18','Insert later',15,'2:10-3:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH331','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH364','S18','Insert later',15,'10:05-11:00 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MATH366','S18','Insert later',15,'11:10-12:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS103','S18','Insert later',15,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS117','S18','Insert later',30,'7:00-9:00 PM','W');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS207','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS210','S18','Insert later',15,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS222','S18','Insert later',20,'7:30-9:00 PM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS278','S18','Insert later',15,'7:30-9:00 PM','M');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS280','S18','Insert later',15,'3:45-5:10 PM','M');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS289','S18','Insert later',15,'7:30-9:00 PM','R');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS309','S18','Insert later',15,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS180P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS181P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS182P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS183P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS184P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS185P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS187P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS188P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS189P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS190P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS191P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS192P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS193P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS195P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS196P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS197P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS198P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('MUS199P','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('NATS116','S18','Insert later',16,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('NATS150','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('NATS150L','S18','Insert later',15,'2:10-5:05 PM','R');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHIL175','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHIL213','S18','Insert later',20,'11:10-12:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHIL313','S18','Insert later',15,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHOT102','S18','Insert later',12,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHOT203','S18','Insert later',15,'12:35-3:30 PM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHOT207','S18','Insert later',6,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHOT307','S18','Insert later',6,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHYS101','S18','Insert later',40,'2:10-3:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHYS101LA','S18','Insert later',20,'9:00-11:55 AM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHYS101LB','S18','Insert later',20,'2:10-5:05 PM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHYS221','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHYS303','S18','Insert later',15,'11:10-12:05 PM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PHYS330','S18','Insert later',15,'9:00-10:25 AM','R');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('POLS235','S18','Insert later',15,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('POLS240','S18','Insert later',7,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PSYC100','S18','Insert later',15,'9:00-9:55 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PSYC202','S18','Insert later',15,'9:00-10:25 AM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PSYC203','S18','Insert later',15,'10:05-11:00 AM','MWF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PSYC310','S18','Insert later',15,'10:35-12:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('PSYC325','S18','Insert later',15,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SOCS224','S18','Insert later',15,'12:35-2:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SOCS309','S18','Insert later',15,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SOCS320','S18','Insert later',15,'3:45-6:40 PM','M');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SOC100','S18','Insert later',15,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART106','S18','Insert later',12,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART114','S18','Insert later',12,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART115M2','S18','Insert later',12,'9:00-11:55 AM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART152','S18','Insert later',12,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART207','S18','Insert later',6,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART367','S18','Insert later',6,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART218','S18','Insert later',15,'5:40-7:05 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART231','S18','Insert later',6,'9:00-11:55 AM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SART331','S18','Insert later',6,'9:00-11:55 AM','F');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA107M2','S18','Insert later',12,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA108','S18','Insert later',6,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA208','S18','Insert later',6,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA121','S18','Insert later',15,'3:45-5:10 PM','MF');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA201','S18','Insert later',12,'2:10-5:05 PM','T');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA206','S18','Insert later',8,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA306','S18','Insert later',7,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA218','S18','Insert later',12,'9:00-10:25 AM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA219','S18','Insert later',6,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA319','S18','Insert later',6,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('THEA232','S18','Insert later',15,'12:35-2:00 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHIN101','S18','Insert later',15,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('CHIN205','S18','Insert later',15,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('ESL098','S18','Insert later',12,'9:00-10:25 AM','MTWR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FREN101','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('FREN205','S18','Insert later',15,'2:10-3:35 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('GERM101','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('GERM205','S18','Insert later',15,'2:10-3:35 PM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LATN101','S18','Insert later',20,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('LATN205','S18','Insert later',20,'3:45-5:10 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SPAN101A','S18','Insert later',15,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SPAN101B','S18','Insert later',15,'TBD','TBD');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SPAN204','S18','Insert later',15,'10:05-11:30 AM','MW');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SPAN205','S18','Insert later',16,'12:35-2:00 PM','TR');
+INSERT INTO offering(id,semester,pf,max_students,time_,days) VALUES ('SPAN211','S18','Insert later',15,'10:35-12:00 PM','TR');
 
 
 
 
 
-insert into offering(id, semester, pf, max_students, time_, days)
-	select distinct course_offering_id as id, semester, pf, CAST(max_students as INTEGER), time_, days FROM all_data;
+
+
+insert into teaches(p_id, o_id, semester)
+	
+	SELECT id as p_id, course_offering_id as o_id, semester as sem FROM(
+	
+		SELECT name, id, course_offering_id, professor_name, semester
+	    	FROM professor, all_data
+	    		WHERE name = professor_name) as teaches;
 
 
 
+insert into course(name,credits, description, first_year, when_new, course_num)
+	 select course_name as name, credits, course_description as description, first_year_friendly as first_year, new as when_new, course_offering_id as course_num from all_data;
+
+insert into implements(c_id, o_id, semester)
+	select id, course_offering_id, semester from (
+	select id, course_offering_id, semester, name, course_name from course, all_data where name = course_name AND course.course_num = course_offering_id)as implement;
 
 INSERT INTO taughtIn(o_id,semester,room_code) VALUES ('PACE099','S18','TBD');
 INSERT INTO taughtIn(o_id,semester,room_code) VALUES ('FS101A','S18','CL1-02');
@@ -819,29 +832,11 @@ INSERT INTO taughtIn(o_id,semester,room_code) VALUES ('SPAN204','S18','LIE-02');
 INSERT INTO taughtIn(o_id,semester,room_code) VALUES ('SPAN205','S18','CL1-01');
 INSERT INTO taughtIn(o_id,semester,room_code) VALUES ('SPAN211','S18','LIE-02');
 
-insert into teaches(p_id, o_id, semester)
-	
-	SELECT id as p_id, course_offering_id as o_id, semester as sem FROM(
-	
-		SELECT name, id, course_offering_id, professor_name, semester
-	    	FROM professor, all_data
-	    		WHERE name = professor_name) as teaches;
 
-
-
-
-insert into course(name,credits, description, first_year, when_new)
-	 select distinct course_name, credits, course_description, first_year_friendly, new from all_data;
-
-insert into implements(c_id, o_id, semester)
-	select id, course_offering_id, semester from (
-	select id, course_offering_id, semester, name, course_name from course, all_data where name = course_name)as implement;
+ALTER table course drop column course_num;
+  
 
 drop table all_data;
-
-
-
-
 
 
 

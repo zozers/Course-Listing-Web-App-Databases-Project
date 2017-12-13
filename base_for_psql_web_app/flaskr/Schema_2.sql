@@ -89,6 +89,7 @@ create table course(
    description   VARCHAR   NOT NULL,
    first_year VARCHAR(80)  NOT NULL,
    when_new VARCHAR(10)   NOT NULL,
+   course_num VARCHAR NOT NULL, /*this is temporary and is removed in complete_data_insert*/
    id SERIAL,
 
    PRIMARY KEY (id)
