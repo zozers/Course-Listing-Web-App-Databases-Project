@@ -58,16 +58,16 @@
 			$("#courseTable tr").click(function() {
                 var new_course = filter_values($(this).html());
                 if (hasClass(this, "highlight")){
-                    /* if clicked while highlighted, remove that item */
-                    guideSelected = guideSelected.splice(isInny(new_course, guideSelected), 1);
+					var index = jQuery.inArray(new_course, guideSelected);
+					guideSelected.splice(index,1);
                 } else {
                     /* if clicked and not highlighted already, add it */
-                    if (isInny(new_course, guideSelected) == -1){
+					var index = jQuery.inArray(new_course, guideSelected);
+                    if (index == -1){
                         guideSelected.push(new_course);
                     }
                 }
                 $(this).toggleClass("highlight");
-                console.log(guideSelected);
    			});
 
 
@@ -75,13 +75,14 @@
             mySelected*/
 			$("#myCourses tr").click(function() {
                 var new_course = soft_filter_values($(this).html());
-                console.log(new_course);
                 if (hasClass(this, "highlight")){
                     /* if clicked while highlighted, remove that item */
-                    mySelected.splice(isInny(new_course, mySelected), 1);
+					var index = jQuery.inArray(new_course, mySelected);
+                    mySelected = mySelected.splice(index, 1);
                 } else {
                     /* if clicked while not highlighted, add it */
-                    if (isInny(new_course, mySelected) == -1){
+					var index = jQuery.inArray(new_course, mySelected);
+                    if (index == -1){
                         mySelected.push(new_course);
                     }
                 }
@@ -96,14 +97,16 @@
                 while (guideSelected.length != 0){
                     /* for all selected */
                     conflict = false;
-                    if (isInny(guideSelected[0], courseArray) != -1){
+					var index = jQuery.inArray(guideSelected[0], courseArray);
+                    if (index != -1){
                         /* if overlap, make sure we don't add it twice */
                         conflict = true;
                     }
                     if (conflict == false){
                         courseArray.push(guideSelected[0]);
                     }
-					guideSelected.splice(isInny(guideSelected[0], guideSelected), 1);
+					var index1 = jQuery.inArray(guideSelected[0], guideSelected);
+					guideSelected.splice(index1, 1);
                 }
                 $("#myCourses").html(create_HTML(courseArray));
                 localStorage.setItem("courseArray", courseArray);
@@ -114,9 +117,12 @@
 			$("#popOutSelected").click(function(){
                 while (mySelected.length != 0){
                     /* for all selected */
-                    courseArray.splice(isInny(mySelected[0], courseArray), 1);
-                    mySelected.splice(isInny(mySelected[0], mySelected), 1);
-
+					// var index = jQuery.inArray(mySelected[0], courseArray);
+					// courseArray.splice(index, 1);
+					// var index1 = jQuery.inArray(mySelected[0], mySelected);
+                    // mySelected.splice(index1, 1);
+					courseArray.splice(isInny(mySelected[0], courseArray), 1);
+					mySelected.splice(isInny(mySelected[0], mySelected), 1);
                 }
                 $("#myCourses").html(create_HTML(courseArray));
                 localStorage.setItem("courseArray", courseArray);
@@ -129,7 +135,6 @@
                     console.log('error')
                     return "";
                 }
-
                 full_str = '';
                 for (var i=0; i < courseArray.length; i++){
                     temp_str = '<tr>';
@@ -148,7 +153,6 @@
                 /* string: og value taken from bottom table html */
                 var final_arr = [];
                 var not_include = [0,2,5,10,11];
-
                 var values = string.split("<td>");
                 var new_values = [];
 
@@ -228,12 +232,9 @@
                     var temp_arr = [];
                     for (var j = 0; j < 7; j++){
                         temp_arr.push(values[j + (7*i)]);
-
-
                     }
                     final_arr.push(temp_arr);
                 }
-
                 return final_arr;
             }
 
