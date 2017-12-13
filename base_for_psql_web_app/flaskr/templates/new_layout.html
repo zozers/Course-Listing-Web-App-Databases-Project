@@ -2,8 +2,6 @@
     <head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <title>Simon's Rock Course Guide</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap-theme.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel=stylesheet type=text/css href="{{ url_for('static', filename='new_style.css') }}">
         <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}"
@@ -36,7 +34,7 @@
                 currentHTML = create_HTML(courseArray);
                 $("#myCourses").html(currentHTML);
             }
-			
+
 
             /* links toolbar button to the search button */
 			$("#buttonSearch").click(function(){
@@ -44,7 +42,7 @@
 			});
 
 
-            /* maintains highlighting and keeps track of 
+            /* maintains highlighting and keeps track of
             guideSelected*/
 			$("#courseTable tr").click(function() {
                 var new_course = filter_values($(this).html());
@@ -54,15 +52,31 @@
                     /* add if not exists */
                     if (isInny(new_course, guideSelected) == -1){
                         guideSelected.push(new_course);
-                    } 
-
+                    }
                 }
                 $(this).toggleClass("highlight");
                 console.log(guideSelected);
    			});
 
 
-            /* push the currently selected courses */
+			/* maintains highlighting and keeps track of
+            mySelected*/
+			$("#myCourses tr").click(function() {
+                var new_course = soft_filter_values($(this).html());
+                if (hasClass(this, "highlight")){
+                    mySelected = mySelected.splice(isInny(new_course, mySelected), 1);
+                } else {
+                    /* add if not exists */
+                    if (isInny(new_course, mySelected) == -1){
+                        mySelected.push(new_course);
+                    }
+                }
+                $(this).toggleClass("highlight");
+                console.log(mySelected);
+   			});
+
+
+            /* push in currently selected courses (below)*/
 			$("#pushInSelected").click(function(){
 			    var conflict;
                 non_overlaps = [];
@@ -78,7 +92,19 @@
                     }
                 }
                 $("#myCourses").html(create_HTML(courseArray));
+			});
 
+
+			/* pop out currently selected courses (above)*/
+			$("#popOutSelected").click(function(){
+			    var conflict;
+                non_overlaps = [];
+                for (var i=0; i<mySelected.length; i++ ){
+                    /* for all selected */
+                    courseArray.splice(isInny(mySelected[i], courseArray));
+
+                }
+                $("#myCourses").html(create_HTML(courseArray));
 			});
 
 
@@ -113,20 +139,34 @@
                 var new_values = [];
 
 
-                for (var i = 0; i < values.length; i++) { 
+                for (var i = 0; i < values.length; i++) {
                     is_in = false;
                     for (var j = 0; j < not_include.length; j++){
                         if (i==not_include[j]){
-                            var is_in = true;                          
+                            var is_in = true;
                         }
                     }
-                    
+
                     if(is_in == false){
                         final_arr.push((values[i].split("</td>"))[0]);
-                    }                   
+                    }
                 }
-                
+
                 /* returns acceptable array to be placed into courseArray */
+                return final_arr;
+            }
+
+
+			function soft_filter_values(string){
+                /* string: og value taken from top table html */
+                var final_arr = [];
+                var final_str = "";
+                var values = string.split("<td>");
+                var new_values = [];
+                for (var i = 0; i < values.length; i++) {
+                    final_arr.push((values[i].split("</td>"))[0]);
+                }
+                /* returns acceptable array to be placed into mySelected */
                 return final_arr;
             }
 
@@ -155,7 +195,6 @@
                 }
                 return -1;
             }
-
 		</script>
 
   </body>

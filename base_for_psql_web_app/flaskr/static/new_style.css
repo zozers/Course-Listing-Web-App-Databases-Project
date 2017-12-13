@@ -3,12 +3,17 @@ body {
 	background: #3c5a6a; }
 
 a, h1, h2 {
-	color: #6497b1; }
+	color: #99c5d8; }
 
 h1, h2 {
 	font-family: 'Georgia', serif;
-	margin: 0;
+	margin: 10px;
 	text-align: center; }
+
+p{
+	font-family: 'Georgia', serif;
+
+}
 
 h1 {
 	border-bottom: 15px solid #3c5a6a;
@@ -16,6 +21,10 @@ h1 {
 
 h2 {
 	font-size: 1.2em;
+}
+
+#searchForm{
+	text-align: center;
 }
 
 .container {
@@ -28,9 +37,7 @@ h2 {
 
 .container_search {
 	font-family: sans-serif;
-	background-color: red;
-	border-width: 20px;
-	border-color: blue;
+	background-color: #3c5a6a;
 
 	width: 30%;
 	height: 40%;
@@ -43,7 +50,7 @@ h2 {
 
 .container_table {
 	font-family: sans-serif;
-	background: #3c5a6a;
+	background-color: #3c5a6a;
 	margin:0 auto;
 	position: absolute;
 
@@ -62,18 +69,75 @@ h2 {
 	top: 0px;
 	right: 30%;
 	overflow: scroll;
-	background-color: green;
+	background-color: #3c5a6a;
+}
+
+#buttons {
+	position: fixed;
+	height: 100%;
+	width: 10%;
+	right: 90%;
+	background-color: #113647;
+}
+
+#buttons button {
+	font-size: 15px;
+	color: #6497b1;
+	font-weight: bold;
+
+	position: relative;
+	float: top;
+	margin:10px;
+	margin-top: 20px;
+	width: 80%;
+}
+
+.boxes{
+	width: 100%;
+	opacity: 100%;
+	background-color: #113647;
+	position: relative;
+	color:#6497b1;
+	text-align: center;
+}
+
+.boxes{
+	padding: 15px;
+}
+
+#box1{
+	height:70px;
+}
+
+#box2{
+	height: 400px;
+}
+
+.boxes input{
+	position: relative;
+	float: left;
+	margin: 5px;
+}
+.boxes div{
+	position: relative;
+	float: left;
+	height: 50px;
+	width: 80px;
+}
+
+.field{
+	width: 95%;
 }
 
 table 			{
 	font-family: sans-serif;
 	background: #d0dfe7;
-	width: 80%;
+	width: 95%;
 	margin: 0 auto;
 	border-collapse: collapse;
 	border-radius: 25px;
 	overflow:hidden;
-	border: 5px solid #63757e;}
+	}
 
 tr, td 			{
 	font-family: sans-serif;
@@ -89,12 +153,32 @@ th 				{
 	border: 2px solid #63757e;
 	text-align: center;}
 
+#formButton {
+	display: none;
+}
+
 /*tr:hover td{
 	background-color: #e7eff3;
 }*/
 
 .highlight td {
 	background-color: yellow;
+}
+
+.highlightBox{
+	color: yellow;
+}
+
+input[type='checkbox'] {
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    background:white;
+}
+input[type='checkbox']:checked {
+    background: #000000;
+	border-radius: 30%;
+	border: 4px solid #dbcc00;
 }
 
 
