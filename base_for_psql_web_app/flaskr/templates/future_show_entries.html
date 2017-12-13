@@ -16,25 +16,31 @@
         <tr>
           <th>Id</th>
           <th>Semester</th>
-          <th>Professor Name</th>
           <th>Course Name</th>
-          <th>Credits</th> 
+          <th>Professor Name</th>
           <th>Description</th> 
+          <th>Time</th>
+          <th>Days</th>
+          <th>Classroom</th>
+          <th>Credits</th> 
           <th>First Year</th>
-          <th>New</th>    
+          <th>Max Students</th>    
         </tr>
       </thead>
       {% for entry in data %}
         <tbody>
           <tr>
             <td>{{ entry.id }}
-            <td>{{ entry.semester}}
-            <td>{{ entry.name }}            
+            <td>{{ entry.semester}}          
             <td>{{ entry[2]}}
-            <td>{{ entry.credits }}
+            <td>{{ entry.name }} 
             <td>{{ entry.description}}
+            <td>{{ entry.time_}}
+            <td>{{ entry.days}}
+            <td>{{ entry.roomcode}}
+            <td>{{ entry.credits }}
             <td>{{ entry.first_year }}
-            <td>{{ entry.new }}
+            <td>{{ entry.max_students }}
           </tr>
         </tbody>
         

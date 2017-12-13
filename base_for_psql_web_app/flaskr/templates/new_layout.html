@@ -18,41 +18,143 @@
 	    </div>
 		<script type="text/javascript">
 
+            /* all currently yellow rows in bottom table*/
 			var guideSelected = [];
+            /* all course to be displayed in top left table */
 			var myCourses = [];
+            /* all currently yellow rows in top left table */
 			var mySelected = [];
 
 
-			currentHTML = localStorage.getItem("currentHTML");
-			alert(currentHTML);
+            /* collect stored item (between refreshes) */
+			courseArray = localStorage.getItem("courseArray");
+            /* initialize if needed */
+			if (typeof courseArray == "undefined" || courseArray == null){
+				var courseArray = [];
+            /* else, use existing info to create the html */
+			} else {
+                currentHTML = create_HTML(courseArray);
+                $("#myCourses").html(currentHTML);
+            }
+			
 
-			if (typeof currentHTML == "undefined"){
-				var currentHTML = "";
-			}
-
-			$("#myCourses").html(currentHTML);
-
+            /* links toolbar button to the search button */
 			$("#buttonSearch").click(function(){
 				$("#formButton").click();
 			});
 
+
+            /* maintains highlighting and keeps track of 
+            guideSelected*/
 			$("#courseTable tr").click(function() {
-    			$(this).toggleClass("highlight");
-				guideSelected.push($(this).html());
+                var new_course = filter_values($(this).html());
+                if (hasClass(this, "highlight")){
+                    guideSelected = guideSelected.splice(isInny(new_course, guideSelected), 1);
+                } else {
+                    /* add if not exists */
+                    if (isInny(new_course, guideSelected) == -1){
+                        guideSelected.push(new_course);
+                    } 
+
+                }
+                $(this).toggleClass("highlight");
+                console.log(guideSelected);
    			});
 
+
+            /* push the currently selected courses */
 			$("#pushInSelected").click(function(){
-				var arrayLength = guideSelected.length;
-				var newHTML = "";
-				for (var i = 0; i < arrayLength; i++) {
-					newHTML += "<tr>" + String(guideSelected[i]); "</tr>"
-    			}
-				$("#myCourses").html(newHTML);
-				currentHTML += newHTML;
-				localStorage.setItem("currentHTML", String(currentHTML));
-				alert(localStorage.getItem("currentHTML"));
+			    var conflict;
+                non_overlaps = [];
+                for (var i=0; i<guideSelected.length; i++ ){
+                    /* for all selected */
+                    conflict = false;
+                    if (isInny(guideSelected[i], courseArray) != -1){
+                        /* if overlap, make sure we don't add it twice */
+                        conflict = true;
+                    }
+                    if (conflict == false){
+                        courseArray.push(guideSelected[i]);
+                    }
+                }
+                $("#myCourses").html(create_HTML(courseArray));
+
 			});
 
+
+            /* creates the HTML based on the courseArray */
+            function create_HTML(courseArray){
+                if (courseArray == null){
+                    console.log('error')
+                    return "";
+                }
+
+                full_str = '';
+                for (var i=0; i < courseArray.length; i++){
+                    temp_str = '<tr>';
+                    for (var j=0; j < courseArray[i].length; j++ ){
+                        temp_str += "<td>";
+                        temp_str += courseArray[i][j];
+                        temp_str += "</td>";
+                    }
+                    temp_str += '</tr>';
+                    full_str += temp_str;
+                }
+                return full_str;
+            }
+
+            function filter_values(string){
+                /* string: og value taken from bottom table html */
+                var final_arr = [];
+                var final_str = "";
+                var not_include = [0,2,5,10,11];
+
+                var values = string.split("<td>");
+                var new_values = [];
+
+
+                for (var i = 0; i < values.length; i++) { 
+                    is_in = false;
+                    for (var j = 0; j < not_include.length; j++){
+                        if (i==not_include[j]){
+                            var is_in = true;                          
+                        }
+                    }
+                    
+                    if(is_in == false){
+                        final_arr.push((values[i].split("</td>"))[0]);
+                    }                   
+                }
+                
+                /* returns acceptable array to be placed into courseArray */
+                return final_arr;
+            }
+
+
+            function hasClass(element, classNameToTestFor) {
+                console.log(element.className);
+                if (element.className == null){
+                    return false;
+                }
+                console.log(element.className);
+                var classNames = element.className.split(' ');
+                for (var i = 0; i < classNames.length; i++) {
+                    if (classNames[i].toLowerCase() == classNameToTestFor.toLowerCase()) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function isInny(array, list){
+                /* only check first value in */
+                for (var i=0; i<list.length; i++){
+                    if (array[0] == list[i][0]){
+                        return i;
+                    }
+                }
+                return -1;
+            }
 
 		</script>
 
