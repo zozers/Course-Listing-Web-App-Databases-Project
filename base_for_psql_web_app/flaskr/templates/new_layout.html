@@ -93,31 +93,29 @@
 			$("#pushInSelected").click(function(){
 			    var conflict;
                 non_overlaps = [];
-                for (var i=0; i<guideSelected.length; i++ ){
+                while (guideSelected.length != 0){
                     /* for all selected */
                     conflict = false;
-                    if (isInny(guideSelected[i], courseArray) != -1){
+                    if (isInny(guideSelected[0], courseArray) != -1){
                         /* if overlap, make sure we don't add it twice */
                         conflict = true;
                     }
                     if (conflict == false){
-                        courseArray.push(guideSelected[i]);
+                        courseArray.push(guideSelected[0]);
                     }
+					guideSelected.splice(isInny(guideSelected[0], guideSelected), 1);
                 }
                 $("#myCourses").html(create_HTML(courseArray));
-
-
                 localStorage.setItem("courseArray", courseArray);
-
 			});
 
 
 			/* pop out currently selected courses (above)*/
 			$("#popOutSelected").click(function(){
-                for (var i=0; i<mySelected.length; i++ ){
+                while (mySelected.length != 0){
                     /* for all selected */
-                    courseArray.splice(isInny(mySelected[i], courseArray), 1);
-                    mySelected.splice(isInny(mySelected[i], mySelected), 1);
+                    courseArray.splice(isInny(mySelected[0], courseArray), 1);
+                    mySelected.splice(isInny(mySelected[0], mySelected), 1);
 
                 }
                 $("#myCourses").html(create_HTML(courseArray));
@@ -161,10 +159,12 @@
                         if (i==not_include[j]){
                             var is_in = true;
                         }
+
                     }
 
                     if(is_in == false){
-                        final_arr.push((values[i].split("</td>"))[0]);
+						values[i] = removeStringComma(values[i])
+                        final_arr.push(values[i].split("</td>")[0]);
                     }
                 }
 
@@ -220,7 +220,7 @@
                 }
                 /* string: og value taken from bottom table html */
                 var final_arr = [];
-                
+
                 var values = string.split(",");
 
 
@@ -236,6 +236,19 @@
 
                 return final_arr;
             }
+
+			function removeStringComma(string){
+				console.log(string);
+				var newS = "";
+				for (var i=0; i<string.length; i++ ){
+					if(string[i] != ","){
+						newS+=string[i];
+					}
+				}
+				console.log(newS);
+				return newS;
+
+			}
 
 
 
