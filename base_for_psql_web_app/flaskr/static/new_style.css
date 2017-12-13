@@ -36,6 +36,7 @@ h2 {
 }
 
 .container_search {
+	border: 4px solid #113647;
 	font-family: sans-serif;
 	background-color: #3c5a6a;
 
@@ -49,6 +50,7 @@ h2 {
 }
 
 .container_table {
+	border: 4px solid #113647;
 	font-family: sans-serif;
 	background-color: #3c5a6a;
 	margin:0 auto;
@@ -63,6 +65,7 @@ h2 {
 }
 
 .container_mine {
+	border: 4px solid #113647;
 	width: 60%;
 	height: 40%;
 	position: fixed;
