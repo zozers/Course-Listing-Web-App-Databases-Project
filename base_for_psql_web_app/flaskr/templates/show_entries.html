@@ -7,11 +7,15 @@
     {% endif %}
 
 <div id="buttons">
-	<button id="buttonSearch">Search</button>
-	<button id="pushInSelected">Push</button>
+	<button id="buttonSearch">Filtered Search</button>
+	<button id="pushInSelected">Add Selected (Below)</button>
+	<button id="popOutSelected">Remove Selected (Above)</button>
 </div>
 
 <div class="container_mine">
+	<div class="page-header">
+        <h1>My Courses</h1>
+    </div>
 	<table id="myCourseTable">
 		<thead>
           <tr>
@@ -21,7 +25,7 @@
             <th>Time</th>
             <th>Days</th>
             <th>Classroom</th>
-            <th>Credits</th> 
+            <th>Credits</th>
           </tr>
         </thead>
 
@@ -34,100 +38,103 @@
 <div class="container_search">
  	<h1> Filter Search </h1>
 	<form id="searchForm" action="/" method=post>
-		<input type=text name=search value="{{request.form.search}}">
 		<h2>Course Search</h2>
+		<input class= "field" type=text name=search value="{{request.form.search}}" placeholder="Ex. Chemistry">
+
 		<h2>Professor Search</h2>
-		<input type=text name=search_1 value="{{request.form.search}}">
+		<input class= "field" type=text name=search_1 value="{{request.form.search}}" placeholder="Ex. Patty Dooley">
 
 
 	    <h2>Credit Select</h2>
-
-
-		<input type="checkbox" name="credit_1" value="1" >
-		<p>1</p>
-		<input type="checkbox" name="credit_2" value="2" >
-		<p>2</p>
-		<input type="checkbox" name="credit_3" value="3" >
-		<p>3</p>
-		<input type="checkbox" name="credit_4" value="4" >
-		<p>4</p>
-		<input type="checkbox" name="credit_lab" value="lab credit" >
-		<p>Lab credit</p>
+		<div id="box1" class="boxes">
+			<div class="boxWrapper"><input type="checkbox" name="credit_1" value="1" >
+			<p>1</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="credit_2" value="2" >
+			<p>2</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="credit_3" value="3" >
+			<p>3</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="credit_4" value="4" >
+			<p>4</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="credit_lab" value="lab credit" >
+			<p>Lab credit</p></div>
+		</div>
 
 		<h2>Department Select</h2>
 
-		<input type="checkbox" name="PACE" value="PACE" >
-		<p>PACE</p>
-		<input type="checkbox" name="FS" value="FS" >
-		<p>FS</p>
-		<input type="checkbox" name="AFAM" value="AFAM" >
-		<p>AFAM</p>
-		<input type="checkbox" name="BIO" value="BIO" >
-		<p>BIO</p>
-		<input type="checkbox" name="ANTH" value="ANTH" >
-		<p>ANTH</p>
-		<input type="checkbox" name="LING" value="LING" >
-		<p>LING</p>
-		<input type="checkbox" name="ARTH" value="ARTH" >
-		<p>ARTH</p>
-		<input type="checkbox" name="DANC" value="DANC" >
-		<p>DANC</p>
-		<input type="checkbox" name="PHIL" value="PHIL" >
-		<p>PHIL</p>
-		<input type="checkbox" name="ARTS" value="ARTS" >
-		<p>ARTS</p>
-		<input type="checkbox" name="WS" value="WS" >
-		<p>WS</p>
-		<input type="checkbox" name="CMPT" value="CMPT" >
-		<p>CMPT</p>
-		<input type="checkbox" name="COM" value="COM" >
-		<p>COM</p>
-		<input type="checkbox" name="CHEM" value="CHEM" >
-		<p>CHEM</p>
-		<input type="checkbox" name="ECON" value="ECON" >
-		<p>ECON</p>
-		<input type="checkbox" name="ENVS" value="ENVS" >
-		<p>ENVS</p>
-		<input type="checkbox" name="FILM" value="FILM" >
-		<p>FILM</p>
-		<input type="checkbox" name="HIST" value="HIST" >
-		<p>HIST</p>
-		<input type="checkbox" name="GEOG" value="GEOG" >
-		<p>GEOG</p>
-		<input type="checkbox" name="LIT" value="LIT" >
-		<p>LIT</p>
-		<input type="checkbox" name="LR" value="LR" >
-		<p>LR</p>
-		<input type="checkbox" name="MATH" value="MATH" >
-		<p>MATH</p>
-		<input type="checkbox" name="MUS" value="MUS" >
-		<p>MUS</p>
-		<input type="checkbox" name="NATS" value="NATS" >
-		<p>NATS</p>
-		<input type="checkbox" name="PHOT" value="PHOT" >
-		<p>PHOT</p>
-		<input type="checkbox" name="PHYS" value="PHYS" >
-		<p>PHYS</p>
-		<input type="checkbox" name="POLS" value="POLS" >
-		<p>POLS</p>
-		<input type="checkbox" name="PSYC" value="PSYC" >
-		<p>PSYC</p>
-		<input type="checkbox" name="SOCS" value="SOCS" >
-		<p>SOCS</p>
-		<input type="checkbox" name="THEA" value="THEA" >
-		<p>THEA</p>
-		<input type="checkbox" name="SART" value="SART" >
-		<p>SART</p>
-		<input type="checkbox" name="CHIN" value="CHIN" >
-		<p>CHIN</p>
-		<input type="checkbox" name="ESL" value="ESL" >
-		<p>ESL</p>
-		<input type="checkbox" name="FREN" value="FREN" >
-		<p>FREN</p>
-		<input type="checkbox" name="GERM" value="GERM" >
-		<p>GERM</p>
-		<input type="checkbox" name="SPAN" value="SPAN" >
-		<p>SPAN</p>
+		<div id="box2" class="boxes">
+			<div class="boxWrapper"><input type="checkbox" name="PACE" value="PACE" >
+			<p>PACE</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="FS" value="FS" >
+			<p>FS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="AFAM" value="AFAM" >
+			<p>AFAM</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="BIO" value="BIO" >
+			<p>BIO</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="ANTH" value="ANTH" >
+			<p>ANTH</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="LING" value="LING" >
+			<p>LING</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="ARTH" value="ARTH" >
+			<p>ARTH</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="DANC" value="DANC" >
+			<p>DANC</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="PHIL" value="PHIL" >
+			<p>PHIL</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="ARTS" value="ARTS" >
+			<p>ARTS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="WS" value="WS" >
+			<p>WS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="CMPT" value="CMPT" >
+			<p>CMPT</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="COM" value="COM" >
+			<p>COM</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="CHEM" value="CHEM" >
+			<p>CHEM</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="ECON" value="ECON" >
+			<p>ECON</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="ENVS" value="ENVS" >
+			<p>ENVS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="FILM" value="FILM" >
+			<p>FILM</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="HIST" value="HIST" >
+			<p>HIST</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="GEOG" value="GEOG" >
+			<p>GEOG</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="LIT" value="LIT" >
+			<p>LIT</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="LR" value="LR" >
+			<p>LR</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="MATH" value="MATH" >
+			<p>MATH</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="MUS" value="MUS" >
+			<p>MUS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="NATS" value="NATS" >
+			<p>NATS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="PHOT" value="PHOT" >
+			<p>PHOT</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="PHYS" value="PHYS" >
+			<p>PHYS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="POLS" value="POLS" >
+			<p>POLS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="PSYC" value="PSYC" >
+			<p>PSYC</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="SOCS" value="SOCS" >
+			<p>SOCS</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="THEA" value="THEA" >
+			<p>THEA</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="SART" value="SART" >
+			<p>SART</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="CHIN" value="CHIN" >
+			<p>CHIN</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="ESL" value="ESL" >
+			<p>ESL</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="FREN" value="FREN" >
+			<p>FREN</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="GERM" value="GERM" >
+			<p>GERM</p></div>
+			<div class="boxWrapper"><input type="checkbox" name="SPAN" value="SPAN" >
+			<p>SPAN</p></div>
+		</div>
 
 		<div id="actions">
 		  <input id="formButton" type=submit value="Search">
@@ -143,9 +150,7 @@
   <div class="container_table">
 
     <div class="page-header">
-        <h1>View Courses</h1>
-        <form method="get" action="/"><button type="submit">Back To Search</button></form>
-
+        <h1>Filtered Courses</h1>
     </div>
 
      <table id="courseTable" class="table">
@@ -155,11 +160,11 @@
           <th>Semester</th>
           <th>Course Name</th>
           <th>Professor Name</th>
-          <th>Description</th> 
+          <th>Description</th>
           <th>Time</th>
           <th>Days</th>
           <th>Classroom</th>
-          <th>Credits</th> 
+          <th>Credits</th>
           <th>First Year</th>
           <th>Max Students</th>
 
@@ -169,11 +174,11 @@
         <tbody>
           <tr>
             <td>{{ entry.id }}
-            <td>{{ entry.semester}}          
+            <td>{{ entry.semester}}
             <td>{{ entry[2]}}
-            <td>{{ entry.name }} 
+            <td>{{ entry.name }}
             <td>{{ entry.description}}
-            <td>{{ entry.time_}} 
+            <td>{{ entry.time_}}
             <td>{{ entry.days}}
             <td>{{ entry.room_code}}
             <td>{{ entry.credits }}
