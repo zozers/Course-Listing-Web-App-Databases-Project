@@ -86,7 +86,7 @@ def search():
             except:
                 pass
 
-        query = ''' SELECT o.id, t.semester, c.name, p.name, c.description, o.time_, o.days, ti.room_code, c.credits, c.first_year, o.max_students FROM course c, teaches t, professor p, offering o, implements i, taughtIn ti
+        query = ''' SELECT distinct o.id, t.semester, c.name, p.name, c.description, o.time_, o.days, ti.room_code, c.credits, c.first_year, o.max_students FROM course c, teaches t, professor p, offering o, implements i, taughtIn ti
                     WHERE o.semester = 'S18' AND o.id = i.o_id AND c.id = i.c_id AND o.id = t.o_id AND p.id = t.p_id AND o.id = ti.o_id AND (c.name ILIKE %s OR c.description ILIKE %s) AND (p.name ILIKE %s) '''
 
         for i in credit_list:

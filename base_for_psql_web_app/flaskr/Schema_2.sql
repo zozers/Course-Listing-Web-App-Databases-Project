@@ -36,29 +36,8 @@ course_description VARCHAR
 );
 
 
---finished filling:
--- department(name)
--- professor(name, id, email)
--- offering(id, semester, pf, max_students)
--- weekday(name)
--- building(name)
--- teaches(professor.id, offering.id, offering.semester)
--- classroom(code, capacity) (half way done)
--- course(name, description, id, credits, first_year_friendly, first_semester_offered)
--- implements(offering.id, offering.semester, course.id,)
-
-
-
-
-
-
 --not finished:
-
-
--- taughtIn(offering.id, offering.semester, classroom.code)
--- locatedIn(classroom.code, building.name)
 -- offers(department.name, course.id)
--- offeredOn(offering.id, offering.semester, weekday.name, time_start, time_end)
 -- requires(course.id, course.id, coreq)
 
 
@@ -89,7 +68,6 @@ create table course(
    description   VARCHAR   NOT NULL,
    first_year VARCHAR(80)  NOT NULL,
    when_new VARCHAR(10)   NOT NULL,
-   course_num VARCHAR NOT NULL, /*this is temporary and is removed in complete_data_insert*/
    id SERIAL,
 
    PRIMARY KEY (id)
@@ -102,6 +80,9 @@ create table offering(
    max_students INT  NOT NULL,
    time_ VARCHAR (50) NOT NULL,
    days VARCHAR (50) NOT NULL,
+   description VARCHAR NOT NULL, /* Temporary for joining the course and offering together is dropped in insert statments. Better data would be more helpful*/
+   name VARCHAR NOT NULL, /* Temporary for joining the course and offering together is dropped in insert statments. Better data would be more helpful*/
+   credits VARCHAR NOT NULL, /* Temporary for joining the course and offering together is dropped in insert statments. Better data would be more helpful*/
    PRIMARY KEY (id, semester)
 );
 
