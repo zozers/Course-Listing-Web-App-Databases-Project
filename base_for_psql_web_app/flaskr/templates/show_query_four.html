@@ -6,7 +6,7 @@
 
     {% endif %}
     <div class="page-header">
-        <h1>View Courses by Capacity</h1>
+        <h1>Most Common Class Times</h1>
         <form method="get" action="/"><button type="submit">Back To Search</button></form>
 
     </div>
@@ -14,9 +14,9 @@
      <table class="table">
       <thead>
         <tr>
-          <th>Class ID</th>
-          <th>Class Name</th>
-          <th>Max Students</th>
+          <th>Class Time Count</th>
+          <th>Time</th>
+
 
         </tr>
       </thead>
@@ -25,8 +25,6 @@
           <tr>
             <td>{{ entry[0] }}
             <td>{{ entry[1]}}
-            <td>{{ entry[2]}}
-
         </tbody>
 
 
