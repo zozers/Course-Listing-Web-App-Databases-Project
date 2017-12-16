@@ -12,13 +12,13 @@ app.config.update(dict(
     DATABASE=os.path.join(app.root_path, 'flaskr.db'),
     SECRET_KEY='development key',
     USERNAME='test',
-    PASSWORD='penis'))
+	PASSWORD='test'))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 
 def connect_db():
     """Connects to the specific database."""
-    rv = psycopg2.connect(dbname="course_guide")
+    rv = psycopg2.connect(dbname="course_guide", user='robby', password='penis')
 
     return rv
 

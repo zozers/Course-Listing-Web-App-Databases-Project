@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-{% extends "new_layout.html" %} 
+{% extends "new_layout.html" %}
 
  {% block content %}
     {% if session.logged_in %}
 
     {% endif %}
     <div class="page-header">
-        <h1>View Courses</h1>
+        <h1>View Room Usage Count</h1>
         <form method="get" action="/"><button type="submit">Back To Search</button></form>
 
     </div>
 
+	<div class="scrollTable">
      <table class="table">
       <thead>
         <tr>
           <th>Room Usage Count</th>
           <th>Room Code</th>
-   
+
         </tr>
       </thead>
       {% for entry in entries %}
         <tbody>
           <tr>
             <td>{{ entry[0] }}
-            <td>{{ entry[1]}}          
+            <td>{{ entry[1]}}
 
         </tbody>
-        
+
 
     {% else %}
       <li><em>Unbelievable.  No entries here so far</em>
     {% endfor %}
     </table>
+	</div>
   {% endblock %}
