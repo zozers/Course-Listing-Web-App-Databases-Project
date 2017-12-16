@@ -1,11 +1,11 @@
 
 Databases Project Type 1.
 
-To implement database create Postgresql db then run Schema.sql to build the schema. To insert all of the data, run complete_data_insert.sql.
+In order to run,
 
-To run the base flask app navigate to base_for_psql_web_app/flaskr  
-
-Then run the python file flaskr.py
-
+# first create postgres database called "course_guide"
+# run the "Schema.sql" and "complete_data_insert" files
+# to serve web-app, run the file flask.py
+# if there is an error, comment out current line that assigns value to 'rv', and replace with the commented out one. Replace 'user' and 'password' your username / password combo for postgres
 
 By Zoe Offermann and Robby Costales

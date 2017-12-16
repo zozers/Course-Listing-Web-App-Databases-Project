@@ -18,9 +18,8 @@ app.config.from_envvar('FLASKR_SETTINGS', silent=True)
 
 def connect_db():
     """Connects to the specific database."""
-    # rv = psycopg2.connect(dbname="course_guide", user='robby', password='penis')
+    # rv = psycopg2.connect(dbname="course_guide", user='username', password='password')
     rv = psycopg2.connect(dbname="course_guide")
-
     return rv
 
 def init_db():
@@ -89,7 +88,7 @@ def show_query_three():
 def show_query_four():
     db = get_db()
     db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    
+
     cur = db.execute("select count(time_), time_ from offering group by time_  order by count(time_) DESC")
     entries = db.fetchall()
     return render_template('show_query_four.html', entries=entries)
