@@ -57,13 +57,23 @@ def close_db(error):
         g.course_guide.close()
 
 
-@app.route('/courses')
-def show_courses():
+@app.route('/extra_query_one')
+def show_query_one():
     db = get_db()
     db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
-    cur = db.execute('select * from course order by course.name')
-    courses = db.fetchall()
-    return render_template('future_show_entries.html', entries=courses)
+    cur = db.execute('select distinct count(room_code), room_code from taughtIn group by room_code order by count(room_code) DESC')
+    entries = db.fetchall()
+    print(entries[0][1])
+    return render_template('show_query_one.html', entries=entries)
+
+@app.route('/extra_query_two')
+def show_query_two():
+    db = get_db()
+    db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    cur = db.execute('select offering.id , course.name, max_students from course, offering, implements where implements.o_id = offering.id and course.id =implements.c_id order by max_students DESC')
+    entries = db.fetchall()
+    print(entries[0][1])
+    return render_template('show_query_two.html', entries=entries)
 
 
 @app.route('/', methods=['GET', 'POST'])

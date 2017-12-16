@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% extends "new_layout.html" %} 
+
+ {% block content %}
+    {% if session.logged_in %}
+
+    {% endif %}
+    <div class="page-header">
+        <h1>View Courses</h1>
+        <form method="get" action="/"><button type="submit">Back To Search</button></form>
+
+    </div>
+
+     <table class="table">
+      <thead>
+        <tr>
+          <th>Class ID</th>
+          <th>Class Name</th>
+          <th>Max Students</th>
+   
+        </tr>
+      </thead>
+      {% for entry in entries %}
+        <tbody>
+          <tr>
+            <td>{{ entry[0] }}
+            <td>{{ entry[1]}}
+            <td>{{ entry[2]}}            
+
+        </tbody>
+        
+
+    {% else %}
+      <li><em>Unbelievable.  No entries here so far</em>
+    {% endfor %}
+    </table>
+  {% endblock %}
