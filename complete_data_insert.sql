@@ -199,14 +199,6 @@ INSERT INTO all_data(course_offering_id,semester,pf,new,course_name,credits,days
 INSERT INTO all_data(course_offering_id,semester,pf,new,course_name,credits,days,time_,classroom,professor_name,first_year_friendly,max_students,course_description) VALUES ('SPAN211','S18','insert later','.','20th-Century Latin American Short Story','3','TR','10:35-12:00 PM','LIE-02','Daniel Giraldo Pulido','WP',15,'Some of the most influential Latin American writers of this century have cultivated the short story as a preferred genre. The most notable are probably the Argentinians Jorge Luis Borges and Julio Cortázar, but other well-known writerssuch as the Colombian Gabriel García Márquez and the Mexican Juan Rulfo have also made important contributions to the art of the short story. This course gives special consideration to the use of fantasy and the supernatural, to psychological and social themes, and to political and philosophical issues. This course is taught entirely in Spanish. Prerequisite: Spanish 205 or above, or permission of the instructor.');
 
 
-INSERT INTO building(Name) VALUES ('Fisher');
-INSERT INTO building(Name) VALUES ('Leibowitz');
-INSERT INTO building(Name) VALUES ('Classrooms');
-INSERT INTO building(Name) VALUES ('Lecture Center');
-INSERT INTO building(Name) VALUES ('Danial Arts Center');
-
-
-
 INSERT INTO Department(Name) VALUES ('Math');
 INSERT INTO Department(Name) VALUES ('Chemistry');
 INSERT INTO Department(Name) VALUES ('Physics');

@@ -63,7 +63,6 @@ def show_query_one():
     db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cur = db.execute('select distinct count(room_code), room_code from taughtIn group by room_code order by count(room_code) DESC')
     entries = db.fetchall()
-    print(entries[0][1])
     return render_template('show_query_one.html', entries=entries)
 
 @app.route('/extra_query_two')
@@ -72,8 +71,28 @@ def show_query_two():
     db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cur = db.execute('select offering.id , course.name, max_students from course, offering, implements where implements.o_id = offering.id and course.id =implements.c_id order by max_students DESC')
     entries = db.fetchall()
-    print(entries[0][1])
     return render_template('show_query_two.html', entries=entries)
+
+
+@app.route('/extra_query_three')
+def show_query_three():
+    db = get_db()
+    db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    cur = db.execute('select count(professor.id), professor.name from teaches, professor where professor.id = teaches.p_id group by professor.id order by count(professor.id) DESC')
+    entries = db.fetchall()
+    return render_template('show_query_three.html', entries=entries)
+
+
+
+@app.route('/extra_query_four')
+def show_query_four():
+    db = get_db()
+    db = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    
+    cur = db.execute("select count(time_), time_ from offering group by time_  order by count(time_) DESC")
+    entries = db.fetchall()
+    return render_template('show_query_four.html', entries=entries)
+
 
 
 @app.route('/', methods=['GET', 'POST'])
