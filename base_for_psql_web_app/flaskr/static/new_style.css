@@ -23,6 +23,7 @@ h2 {
 	font-size: 1.2em;
 }
 
+
 #searchForm{
 	text-align: center;
 }
@@ -85,7 +86,7 @@ h2 {
 	background-color: #113647;
 }
 
-#buttons button {
+#buttons button, input {
 	font-size: 15px;
 	color: #6497b1;
 	font-weight: bold;
@@ -188,6 +189,27 @@ input[type='checkbox']:checked {
 	border: 4px solid #dbcc00;
 }
 
+.scrollTable {
+	overflow: scroll;
+	position: fixed;
+	height: 70%;
+	top: 20%;
+	width: 80%;
+	left: 10%
+}
+
+.scrollTable table {
+	width: 90%;
+	height: 90%;
+}
+
+.page-header {
+	text-align: center;
+	position: fixed;
+	width: 100%;
+	height: 30%;
+
+}
 
 
 .error          { background: #f0d6d6; padding: 0.5em; }
