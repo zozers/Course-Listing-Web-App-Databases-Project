@@ -779,6 +779,36 @@ INSERT INTO taughtIn(o_id,semester,room_code) VALUES ('SPAN205','S18','CL1-01');
 INSERT INTO taughtIn(o_id,semester,room_code) VALUES ('SPAN211','S18','LIE-02');
 
 
+INSERT INTO Requires(c_id,req_id) VALUES (104, 155);
+INSERT INTO Requires(c_id,req_id) VALUES (97, 169);
+INSERT INTO Requires(c_id,req_id) VALUES (88, 35);
+INSERT INTO Requires(c_id,req_id) VALUES (69, 15);
+INSERT INTO Requires(c_id,req_id) VALUES (163, 12);
+INSERT INTO Requires(c_id,req_id) VALUES (20, 128);
+INSERT INTO Requires(c_id,req_id) VALUES (130, 115);
+INSERT INTO Requires(c_id,req_id) VALUES (112, 69);
+INSERT INTO Requires(c_id,req_id) VALUES (27, 77);
+INSERT INTO Requires(c_id,req_id) VALUES (58, 155);
+INSERT INTO Requires(c_id,req_id) VALUES (86, 79);
+
+
+INSERT INTO coRequires(c_id,coreq_id) VALUES (159,155); /* only one class I can think of that has a co-req*/
+
+
+INSERT INTO offers(c_id,d_name) VALUES (155,'Math');
+INSERT INTO offers(c_id,d_name) VALUES (104,'Math');
+INSERT INTO offers(c_id,d_name) VALUES (64,'Chemistry');
+INSERT INTO offers(c_id,d_name) VALUES (110,'Physics');
+INSERT INTO offers(c_id,d_name) VALUES (159,'Physics');
+INSERT INTO offers(c_id,d_name) VALUES (157,'Math');
+INSERT INTO offers(c_id,d_name) VALUES (58,'Math');
+INSERT INTO offers(c_id,d_name) VALUES (145,'Computer Science');
+INSERT INTO offers(c_id,d_name) VALUES (88,'Computer Science');
+INSERT INTO offers(c_id,d_name) VALUES (102,'Computer Science');
+
+
+
+
 /* droped column because information is in course and the implements table has been created*/
   
 ALTER table offering drop column description; 

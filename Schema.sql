@@ -17,7 +17,7 @@ drop table if exists requires CASCADE;
 drop table if exists all_data CASCADE;
 
 
-create table all_data(
+create table all_data( /* table only used for inserting data */
 
 course_offering_id   VARCHAR,
 semester VARCHAR,
@@ -34,12 +34,6 @@ max_students   VARCHAR,
 course_description VARCHAR
 
 );
-
-
---not finished:
--- offers(department.name, course.id)
--- requires(course.id, course.id, coreq)
-
 
 
 create table professor(
@@ -120,3 +114,9 @@ create table Requires(
    c_id SERIAL REFERENCES course (id),
    req_id SERIAL REFERENCES course(id)
 );
+
+create table coRequires(
+   c_id SERIAL REFERENCES course (id),
+   coreq_id SERIAL REFERENCES course(id)
+);
+
